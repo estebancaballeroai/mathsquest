@@ -1,0 +1,920 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#173249"><title>Maths Quest - Edition Android ancien</title><style>:root{--ink:#173249;--muted:#657a84;--paper:#fffdf7;--bg:#f5f3e9;--surface:#fff;--line:#e5e5dd;--red:#ef6e57;--gold:#f4b64b;--mint:#54ab8f;--blue:#659bd1;--violet:#9884c4;--shadow:0 10px 28px rgba(18,46,63,.08);--radius:23px;font-family:'Trebuchet MS','Avenir Next','Segoe UI',sans-serif;color:#173249;background:#f5f3e9;font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 8% 10%,#fff9de 0,transparent 23%),radial-gradient(circle at 95% 29%,#e6f3ef 0,transparent 20%),#f5f3e9;color:#173249}button,input,select{font:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{opacity:.42;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #558bcc;outline-offset:3px}h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.03em}h1{font-size:2.1rem;line-height:1.06;margin-bottom:12px}h2{font-size:1.45rem;line-height:1.15;margin-bottom:10px}h3{font-size:1.14rem;line-height:1.2;margin-bottom:7px}p{line-height:1.52}.muted{color:#657a84}.tiny{font-size:.78rem;color:#657a84}.sr-only{position:absolute;clip:rect(0,0,0,0);height:1px;width:1px;overflow:hidden;white-space:nowrap}button svg{pointer-events:none}
+.app-shell{max-width:1050px;margin:auto;padding:0 15px 115px 115px}.topbar{height:83px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:11px;background:none;border:0;padding:0;color:inherit;text-align:left}.brand-symbol{height:44px;width:44px;border-radius:15px;background:#183249;color:#f8c368;display:grid;place-items:center;box-shadow:0 5px 0 #c2d8d1;font-size:24px;transform:rotate(-7deg)}.brand-label{font-size:1.16rem;font-weight:900;letter-spacing:-.055em;display:block}.brand-sub{display:block;font-size:.68rem;letter-spacing:.13em;font-weight:900;color:#749190;text-transform:uppercase;margin-top:1px}.top-actions{display:flex;gap:9px;align-items:center}.stat-chip{display:flex;gap:7px;align-items:center;font-size:.82rem;font-weight:900;border-radius:999px;background:#fff;border:1px solid #e5e5dd;padding:10px 12px;white-space:nowrap}.round-icon{background:#fff;border:1px solid #e5e5dd;height:42px;width:42px;border-radius:14px;font-size:20px;display:grid;place-items:center}
+.hero{background:#173249;color:#fff;border-radius:31px;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);min-height:320px;box-shadow:0 18px 40px rgba(23,50,73,.14)}.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffff88 1.1px,transparent 1.1px);background-size:31px 29px;opacity:.27;pointer-events:none}.hero:after{content:"";width:360px;height:360px;border:2px dashed #f9e7a02b;border-radius:50%;position:absolute;right:-95px;top:-150px}.hero-copy{position:relative;z-index:2;padding:37px 15px 33px 39px;max-width:630px}.eyebrow{font-size:.73rem;font-weight:900;text-transform:uppercase;letter-spacing:.155em;color:#f1c568;margin-bottom:14px}.hero h1{max-width:500px}.hero p{color:#d1dfe2;font-size:.96rem;max-width:400px;margin-bottom:22px}.hero-art{display:flex;align-items:center;justify-content:center;position:relative;min-height:280px}.island-art{width:96%;height:auto;filter:drop-shadow(0 17px 0 rgba(0,0,0,.12));animation:bob 5s ease-in-out infinite}.hero-star{position:absolute;top:20px;right:28px;font-size:39px;transform:rotate(16deg);animation:twinkle 3s ease-in-out infinite}.hero-spark{position:absolute;bottom:38px;left:6px;font-size:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:14px;padding:13px 18px;font-weight:900;transition:transform .12s,box-shadow .12s;line-height:1.15;text-align:center;min-height:46px}.btn:hover:not(:disabled){transform:translateY(-2px)}.btn:active:not(:disabled){transform:translateY(1px)}.btn-primary{background:#f5b84d;color:#193449;box-shadow:0 4px 0 #d28e29}.btn-dark{background:#1c3b53;color:#fff;box-shadow:0 4px 0 #10283b}.btn-outline{border:1.5px solid #d5dfdc;background:#fff;color:#173249}.btn-ghost{background:transparent;color:inherit}.btn-coral{background:#f17861;color:#fff;box-shadow:0 4px 0 #d75442}.btn-wide{width:100%}.btn-small{padding:9px 13px;min-height:36px;font-size:.82rem;border-radius:11px}.hero .btn{font-size:.96rem}.section{margin-top:33px}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}.section-head h2{margin:0}.section-sub{font-size:.87rem;color:#657a84;margin-top:5px}.section-head .mini-link{font-size:.82rem;font-weight:800;border:none;background:none;color:#476f91;white-space:nowrap}.eyebrow-dark{color:#8b7761;font-size:.73rem;font-weight:900;text-transform:uppercase;letter-spacing:.14em;margin:0 0 7px}
+.daily-card{margin-top:18px;background:#fff;border:1px solid #e7e5d8;border-radius:22px;box-shadow:0 10px 28px rgba(18,46,63,.08);padding:20px 21px;display:flex;align-items:center;gap:20px}.daily-icon{width:58px;height:58px;background:#fff4da;border-radius:18px;display:grid;place-items:center;font-size:31px;flex-shrink:0}.daily-copy{flex:1}.daily-title{font-weight:900;font-size:1rem}.daily-sub{font-size:.83rem;color:#657a84;margin:5px 0 9px}.progress{background:#e9ece6;height:9px;border-radius:99px;overflow:hidden}.progress>span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#48b799,#68d2ac);transition:width .4s}.daily-copy .progress{max-width:400px}.daily-card .btn{white-space:nowrap}
+.world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;position:relative}.world-card{border:none;background:#fff;border-radius:24px;min-height:217px;overflow:hidden;padding:0;text-align:left;position:relative;box-shadow:0 10px 28px rgba(18,46,63,.08);transition:transform .18s,box-shadow .18s;color:#173249}.world-card:hover{transform:translateY(-3px);box-shadow:0 16px 28px #244e5622}.world-card:active{transform:scale(.99)}.world-scene{height:115px;display:flex;justify-content:center;align-items:center;position:relative;overflow:hidden}.world-scene:before{content:"";width:170px;height:170px;border:2px dashed #ffffff80;border-radius:50%;position:absolute;transform:rotate(25deg)}.world-scene:after{content:"";width:90px;height:45px;position:absolute;bottom:-23px;border-radius:50%;background:#ffffff7a;filter:blur(12px)}.world-emoji{font-size:69px;z-index:1;filter:drop-shadow(0 7px 1px #00000020);animation:bob 5.5s ease-in-out infinite}.world-tint-add{background:linear-gradient(120deg,#a5e3ba,#d6efad)}.world-tint-sub{background:linear-gradient(120deg,#e3c9f2,#b5c6f0)}.world-tint-mul{background:linear-gradient(120deg,#ffe0a1,#ffbf9f)}.world-tint-div{background:linear-gradient(120deg,#a8e6e0,#badcf0)}.world-body{padding:13px 17px 17px}.world-title{font-size:1.02rem;font-weight:900;letter-spacing:-.03em;margin:0 0 4px}.world-subtitle{font-size:.81rem;color:#71828c;margin:0 0 10px}.world-meta{display:flex;justify-content:space-between;align-items:center;gap:9px;font-size:.76rem;font-weight:900;color:#617780}.stars{letter-spacing:2px;color:#e7a73e;white-space:nowrap}.world-arrow{background:#f0f3ec;border-radius:50%;width:28px;height:28px;display:grid;place-items:center;font-size:18px}.world-level{position:absolute;top:10px;right:12px;background:#ffffffdb;border-radius:99px;padding:5px 9px;font-weight:900;font-size:.72rem;z-index:2;color:#24435b}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;padding:8px 12px 10px;background:#fffdf9ef;border-top:1px solid #e3e6df;display:flex;justify-content:center;gap:4px;z-index:20;backdrop-filter:blur(15px)}.nav-item{border:0;min-width:85px;width:23%;padding:8px 7px;border-radius:16px;background:transparent;color:#71858d;display:flex;align-items:center;gap:3px;flex-direction:column;font-weight:800;font-size:.69rem}.nav-item .nav-icon{font-size:23px;line-height:1.15}.nav-item.active{background:#e7f1ee;color:#174b56}.main-heading{margin:20px 0 7px}.page-intro{color:#657a84;margin-bottom:23px;max-width:650px}.panel{border:1px solid #e9e7dd;background:#fff;border-radius:23px;padding:22px;box-shadow:0 10px 28px rgba(18,46,63,.08)}.world-tabs,.level-tabs{display:flex;flex-wrap:wrap;gap:7px}.pill{border:1px solid #dbe2db;border-radius:999px;background:#fff;padding:10px 13px;color:#3f5863;font-size:.84rem;font-weight:900;min-height:40px}.pill.selected{background:#1b3c53;border-color:#1b3c53;color:#fff}.setup-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;font-weight:900;color:#7b8985;margin:21px 0 10px}.mode-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:19px}.mode-card{background:#fff;border:1.5px solid #e7e8dc;border-radius:18px;padding:16px;text-align:left;min-height:138px;color:#173249;transition:transform .12s,border-color .12s}.mode-card:hover{border-color:#85b1b0;transform:translateY(-2px)}.mode-card-icon{font-size:29px;display:block;margin-bottom:9px}.mode-card strong{font-size:.9rem;display:block;line-height:1.22}.mode-card p{margin:5px 0 0;color:#73828c;font-size:.73rem;line-height:1.4}.mode-card .mode-badge{color:#8466a7;font-size:.67rem;font-weight:900;margin-top:8px;display:block}.setup-hint{font-size:.83rem;line-height:1.5;color:#5c7480;background:#eaf2ed;border-radius:13px;padding:13px;margin:10px 0}.resource-strip{display:flex;gap:12px;flex-wrap:wrap}.resource-strip .panel{flex:1;min-width:170px;text-align:center}.big-number{font-size:2rem;font-weight:900;letter-spacing:-.04em}.progress-row{display:flex;align-items:center;gap:12px;margin:12px 0}.progress-row .progress{flex:1}.progress-row-label{font-size:.83rem;font-weight:800;width:108px}.progress-row-percent{width:49px;font-size:.82rem;font-weight:900;text-align:right}.ach-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.ach-card{background:#fff;border:1px solid #e5e7de;border-radius:18px;padding:15px;text-align:center}.ach-icon{font-size:34px;display:block;margin-bottom:8px;filter:grayscale(1);opacity:.55}.ach-card.earned .ach-icon{filter:none;opacity:1}.ach-card strong{font-size:.86rem;display:block}.ach-card .tiny{display:block;margin-top:5px}.ach-card:not(.earned){background:#f9f9f4}.parent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.parent-grid .panel{box-shadow:none}.select-field{width:100%;border:1px solid #dbe0d9;background:#fff;border-radius:12px;padding:12px;color:#173249;font-weight:800;min-height:45px}.settings-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px}.settings-row label{font-size:.88rem;font-weight:800}.help-note{font-size:.81rem;color:#657a84;line-height:1.5}.danger-button{background:#fff3f0;color:#ac4c43;border:1px solid #f1d4cb;padding:11px 15px;border-radius:12px;font-weight:800}.parent-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.game-shell{max-width:770px;margin:0 auto;padding:12px 0 30px}.game-top{display:flex;align-items:center;gap:12px;justify-content:space-between;margin-bottom:18px}.game-top .round-icon{flex:none}.game-heading{flex:1;min-width:0}.game-heading strong{display:block;font-size:.94rem}.game-heading .tiny{display:block;margin-top:4px}.game-step{font-size:.75rem;font-weight:900;background:#fff;border:1px solid #e4e6da;border-radius:30px;padding:8px 10px;white-space:nowrap}.game-progress{height:10px;background:#e0e8e5;border-radius:99px;overflow:hidden;margin-bottom:20px}.game-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#82cea9,#f4ba57);transition:width .25s;border-radius:99px}.question-card{position:relative;background:#fff;border:1px solid #e4e9e0;border-radius:28px;padding:28px;box-shadow:0 12px 30px rgba(25,67,70,.085);overflow:hidden}.question-card:before{content:'✦';position:absolute;right:20px;top:10px;font-size:61px;color:#f6f3dd;z-index:0}.question-content{position:relative}.question-mode{display:flex;align-items:center;gap:8px;color:#63837f;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:900;margin-bottom:13px}.question-mode .mode-face{font-size:21px}.question-card h2{font-size:2.1rem;line-height:1.35;max-width:620px;margin-bottom:13px}.formula{font-size:2.1rem;font-weight:900;letter-spacing:-.05em;text-align:center;background:#f5f7ee;border-radius:15px;margin:15px 0;padding:17px 12px;color:#234961;overflow-wrap:anywhere}.story-formula{font-size:.81rem;color:#67848a;font-weight:800;margin-top:10px}.answer-area{margin-top:20px}.answer-label{text-align:center;display:block;font-size:.77rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#799097;margin-bottom:10px}.number-field{width:100%;border:2px solid #ccdad5;border-radius:14px;min-height:64px;text-align:center;background:#f9fcf7;color:#203a53;font-weight:900;font-size:2rem;padding:10px 12px;letter-spacing:.05em}.number-field:focus{outline:none;border-color:#60a7a0;box-shadow:0 0 0 4px #74bbb32d}.number-wrap{max-width:360px;margin:auto}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px auto 0;max-width:350px}.key{border:1px solid #dae3de;background:#f3f6f1;min-height:56px;border-radius:14px;font-size:1.35rem;color:#234159;font-weight:900;box-shadow:0 3px 0 #d8e1dc}.key:active{transform:translateY(2px);box-shadow:0 1px 0 #d8e1dc}.key.back{background:#ffeae5;color:#bd6051}.key.clear{font-size:.94rem;background:#e5f1ef;color:#387d7b}.answer-actions{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:19px}.answer-actions .btn{min-width:138px}.hint-box{background:#fff9e7;border:1px solid #f6e1a6;color:#795b22;border-radius:16px;padding:14px 16px;font-size:.88rem;line-height:1.55;margin-top:18px}.feedback{border-radius:17px;padding:15px 16px;margin-top:18px;line-height:1.5}.feedback.good{background:#e6f7eb;border:1px solid #b0dfc3;color:#21543d}.feedback.bad{background:#fff1e8;border:1px solid #f0ccad;color:#8c4d29}.feedback strong{font-size:1rem;display:block;margin-bottom:4px}.feedback p{margin:0;font-size:.9rem}.operator-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:460px;margin:14px auto}.operator-btn{border-radius:17px;min-height:75px;border:2px solid #d9e3de;background:#f6f8f2;font-size:2rem;font-weight:900;color:#173249}.operator-btn.selected{background:#dbf0e8;border-color:#42a98b;box-shadow:0 0 0 3px #81c5a63b}.share-pile{text-align:center;border-radius:16px;background:#f1f6fb;padding:12px;margin-bottom:14px}.pile-gems{font-size:23px;letter-spacing:3px;line-height:1.8}.share-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.chest{background:#f8f5e8;border:2px solid #e8d9b5;border-radius:18px;min-height:123px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#62543e}.chest .chest-emoji{font-size:30px}.chest .gems{font-size:14px;min-height:22px;letter-spacing:2px}.chest strong{font-size:.9rem}.chest .remove-gem{border:1px solid #d9cfb8;background:#fff;border-radius:12px;font-size:1.2rem;font-weight:900;width:42px;height:42px;display:grid;place-items:center}.chest-top{display:flex;align-items:center;gap:7px}.share-bottom{font-size:.86rem;text-align:center;margin-top:13px;font-weight:900;color:#476778}.fraction-bars{display:flex;gap:5px;margin:17px auto;max-width:450px}.fraction-part{flex:1;min-height:36px;border-radius:8px;background:#e7e8e2;border:1px solid #d7dfd8}.fraction-part.selected{background:#93d5b5;border-color:#53b68d}.column-wrap{max-width:310px;margin:10px auto;border-radius:15px;background:#f5f6f1;padding:15px 23px;text-align:right;font-family:ui-monospace,'Courier New',monospace;font-size:2.1rem;font-weight:bold;line-height:1.25;letter-spacing:.1em}.column-last{border-bottom:3px solid #234459;padding-bottom:5px}.scratch-wrap{margin:17px auto 0;max-width:620px}.scratch-toggle{font-size:.83rem;background:#edf3ec;border:1px solid #d8e4db;border-radius:12px;padding:10px 13px;font-weight:800}.scratch-area{background:repeating-linear-gradient(0deg,transparent,transparent 23px,#d3e1e5 24px),repeating-linear-gradient(90deg,transparent,transparent 23px,#d3e1e5 24px),#fefdf8;border:1px solid #d9e4df;border-radius:15px;overflow:hidden;margin:9px 0;position:relative}.scratch-area canvas{width:100%;height:210px;display:block;touch-action:none}.scratch-clear{display:flex;justify-content:end}.game-bottom-tools{display:flex;justify-content:space-between;align-items:center;margin-top:13px;gap:12px}.game-bottom-tools .btn{font-size:.8rem}.game-footnote{font-size:.77rem;color:#73878e}.session-finish{background:#fff;border-radius:27px;text-align:center;padding:35px 23px;box-shadow:0 10px 28px rgba(18,46,63,.08);border:1px solid #e4e8dd}.victory-icon{font-size:77px;display:block;animation:bob 4s ease-in-out infinite}.finish-score{font-size:3.3rem;font-weight:900;letter-spacing:-.07em;margin:8px 0}.finish-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:11px;margin-top:20px}.level-up{padding:14px;background:#fff5dc;border:1px solid #e8d094;border-radius:15px;margin:14px 0;color:#73571d;font-weight:800}.info-banner{background:#e9f3ef;border-radius:18px;padding:16px 18px;margin-bottom:16px;color:#355e58;font-size:.87rem;line-height:1.5}.footer-note{text-align:center;color:#82928d;font-size:.73rem;margin-top:26px}.separator{height:1px;background:#e7e8df;margin:20px 0}.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:100px;z-index:90;background:#173249;color:#fff;padding:12px 20px;border-radius:999px;box-shadow:0 10px 28px rgba(18,46,63,.08);font-size:.86rem;font-weight:800;max-width:90vw;text-align:center}
+@media(max-width:720px){.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:27px 25px 7px}.hero h1{font-size:2.45rem}.hero-art{min-height:162px;max-height:174px;overflow:hidden}.island-art{width:255px;margin-top:-27px}.hero-star{top:2px;right:52px}.hero p{font-size:.91rem;margin-bottom:17px}.world-card{min-height:200px}.world-scene{height:100px}.world-emoji{font-size:60px}.world-title{font-size:.92rem}.world-subtitle{font-size:.73rem}.daily-card{gap:11px;padding:15px}.daily-icon{height:46px;width:46px;font-size:25px}.daily-card .btn{padding:9px 11px;font-size:.79rem;min-height:38px}.mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.parent-grid{grid-template-columns:1fr}.question-card{padding:21px 15px}.topbar{height:73px}}
+@media(max-width:390px){.brand-symbol{height:38px;width:38px;border-radius:12px}.brand-label{font-size:1.05rem}.brand-sub{font-size:.59rem}.stat-chip{padding:9px 8px;font-size:.75rem}.round-icon{width:38px;height:38px}.world-grid{gap:10px}.world-body{padding:11px}.world-title{font-size:.84rem}.world-meta{font-size:.66rem}.world-level{font-size:.64rem}.nav-item{min-width:0}.btn{font-size:.86rem}.daily-card .daily-icon{display:none}.question-card h2{font-size:1.22rem}}
+@media(min-width:850px){.bottom-nav{max-width:650px;left:50%;right:auto;transform:translateX(-50%);border:1px solid #e3e6df;border-bottom:0;border-radius:22px 22px 0 0}.world-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.world-card{min-height:250px}.world-scene{height:138px}.world-emoji{font-size:76px}.world-body{padding:14px}.world-title{font-size:.94rem}.world-subtitle{min-height:34px}.hero{min-height:317px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes twinkle{0%,100%{opacity:1;transform:rotate(16deg) scale(1)}50%{opacity:.7;transform:rotate(28deg) scale(1.15)}}
+
+.remainder-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.remainder-fields .number-field{font-size:1.65rem;min-height:64px}.number-field.active-field{border-color:#43a88c;box-shadow:0 0 0 4px #74bbb32d}
+
+.desktop-nav{display:none;gap:5px;align-items:center}.desktop-nav-item{background:transparent;border:0;border-radius:12px;padding:10px;font-weight:900;font-size:.85rem;color:#6e878c;white-space:nowrap}.desktop-nav-item.active{background:#e4eeeb;color:#193f54}
+@media(min-width:850px){.desktop-nav{display:flex}.bottom-nav{display:none}.app-shell{padding-bottom:45px}}
+
+/* Compatible mise en page: les vieux navigateurs Android n'ont pas CSS Grid. */
+:root{color:#173249;background:#f5f3e9}
+body{background:#f5f3e9;color:#173249}
+.app-shell{padding:0 13px 110px}
+.hero{display:block;min-height:0}
+.hero-copy{padding:25px 22px 12px}
+.hero h1{font-size:2.2rem}
+.hero-art{display:block;text-align:center;min-height:140px;max-height:175px;overflow:hidden}
+.island-art{max-width:235px;height:180px}
+.brand-symbol,.round-icon,.daily-icon,.world-arrow{display:inline-block;text-align:center;line-height:42px}
+.world-grid{display:block;font-size:0}
+.world-card{display:inline-block;vertical-align:top;width:48%;margin:0 1% 11px;min-height:215px;font-size:14px}
+.world-title{font-size:14px}
+.mode-grid{display:block;font-size:0}
+.mode-card{display:inline-block;vertical-align:top;width:48%;margin:0 1% 10px;font-size:14px;min-height:154px}
+.keypad{display:block;max-width:350px;margin:10px auto;font-size:0;text-align:center}
+.keypad .key{display:inline-block;width:31%;margin:0 1% 7px;vertical-align:top;font-size:22px}
+.operator-options,.share-grid,.remainder-fields,.parent-grid{display:block;text-align:center;font-size:0}
+.operator-btn{display:inline-block;width:22%;margin:1%;font-size:26px}
+.chest{display:inline-block;width:47%;margin:1%;vertical-align:top;font-size:14px}
+.remainder-fields>div,.parent-grid>.panel{display:inline-block;width:48%;margin:1%;vertical-align:top;font-size:14px}
+.fraction-bars{display:block;font-size:0;text-align:center}
+.fraction-part{display:inline-block;width:12%;margin:0 1px}
+.resource-strip{display:block}.resource-strip>*{display:inline-block;vertical-align:top;margin:5px}
+.daily-card{display:block;overflow:hidden;padding:13px}
+.daily-copy{display:block;margin:4px 0 12px}
+.daily-icon{display:none}
+.nav-item{display:inline-block;vertical-align:middle;width:23%;min-width:0;text-align:center}
+.nav-item .nav-icon{display:block}
+.bottom-nav{display:block;text-align:center;padding:6px 1% 8px}
+.topbar{display:block;height:70px;padding-top:10px;position:relative}
+.top-actions{position:absolute;right:0;top:12px}
+.brand{display:inline-block;max-width:65%;text-align:left}
+.brand-symbol{float:left;margin-right:10px}
+.brand-label{display:block;padding-top:4px}
+.hero:before,.hero:after,.world-scene:before,.world-scene:after{display:none}
+.question-card h2{font-size:1.28rem}
+.formula{font-size:2rem}
+.number-field{font-size:2rem}
+.level-tabs .pill,.world-tabs .pill{display:inline-block;margin:3px}
+.desktop-nav{display:none!important}
+button,input{touch-action:manipulation}
+@media(min-width:800px){.world-card{width:23%}.mode-card{width:31%}}
+@media(max-width:390px){.world-card{min-height:206px}.mode-card{min-height:147px}.hero h1{font-size:2rem}.brand-sub{font-size:9px}}
+</style></head><body><div id="app"><div style="max-width:540px;margin:20px auto;padding:22px;background:#fff;border-radius:18px;font-family:Arial,sans-serif"><h1 style="font-size:25px">Maths Quest</h1><p>Chargement du jeu...</p><p style="font-size:14px">Si ce message reste affich&eacute;, ouvre ce fichier avec un <strong>navigateur Internet</strong> (et non avec le lecteur HTML int&eacute;gr&eacute;). Certaines anciennes tablettes d&eacute;sactivent JavaScript dans leur lecteur de fichiers.</p></div></div><div id="announcer" class="sr-only" aria-live="polite"></div><script>window.onerror=function(msg,src,line){var a=document.getElementById('app');if(a){a.innerHTML='<div style="margin:20px;padding:20px;background:#fff;border:2px solid #d97449;border-radius:15px;font-family:Arial,sans-serif"><h2>Impossible de lancer le jeu</h2><p>Cette tablette a un navigateur trop ancien ou un lecteur HTML qui ne permet pas le jeu. Essaie avec son navigateur Internet.</p><small>'+String(msg).replace(/[<>]/g,'')+' (ligne '+line+')</small></div>';}return false;};</script><script>(function(){
+if(!Array.prototype.includes)Array.prototype.includes=function(x){return this.indexOf(x)!==-1;};
+if(!Array.prototype.fill)Array.prototype.fill=function(value,start,end){var l=this.length>>>0;var s=start==null?0:(start<0?Math.max(0,l+start):Math.min(l,start));var e=end==null?l:(end<0?Math.max(0,l+end):Math.min(l,end));for(var i=s;i<e;i++)this[i]=value;return this;};
+if(!Array.from)Array.from=function(obj,map){var len=obj.length>>>0,out=[];for(var i=0;i<len;i++)out.push(map?map(obj[i],i):obj[i]);return out;};
+if(!Object.values)Object.values=function(obj){return Object.keys(obj).map(function(k){return obj[k];});};
+if(!Object.entries)Object.entries=function(obj){return Object.keys(obj).map(function(k){return [k,obj[k]];});};
+if(!Object.fromEntries)Object.fromEntries=function(entries){var result={};for(var i=0;i<entries.length;i++)result[entries[i][0]]=entries[i][1];return result;};
+if(!Object.assign)Object.assign=function(target){for(var i=1;i<arguments.length;i++){var obj=arguments[i];if(obj)for(var k in obj)if(Object.prototype.hasOwnProperty.call(obj,k))target[k]=obj[k];}return target;};
+if(!Math.imul)Math.imul=function(a,b){var ah=a>>>16&65535,al=a&65535,bh=b>>>16&65535,bl=b&65535;return (al*bl+(ah*bl+al*bh<<16)|0);};
+if(!Number.isInteger)Number.isInteger=function(x){return typeof x==='number'&&isFinite(x)&&Math.floor(x)===x;};
+if(!String.prototype.repeat)String.prototype.repeat=function(n){var s='';for(var i=0;i<n;i++)s+=this;return s;};
+if(!String.prototype.padStart)String.prototype.padStart=function(len,fill){var s=String(this),c=String(fill||' ');while(s.length<len)s=c+s;return s.substr(s.length-len);};
+if(!String.prototype.startsWith)String.prototype.startsWith=function(s){return this.slice(0,s.length)===s;};
+if(!Element.prototype.matches)Element.prototype.matches=Element.prototype.webkitMatchesSelector||Element.prototype.msMatchesSelector||function(sel){var nodes=this.parentNode?this.parentNode.querySelectorAll(sel):[];for(var i=0;i<nodes.length;i++)if(nodes[i]===this)return true;return false;};
+if(!Element.prototype.closest)Element.prototype.closest=function(sel){var el=this;while(el&&el.nodeType===1){if(el.matches(sel))return el;el=el.parentElement||el.parentNode;}return null;};
+if(!Element.prototype.remove)Element.prototype.remove=function(){if(this.parentNode)this.parentNode.removeChild(this);};
+if(window.NodeList&&!NodeList.prototype.forEach)NodeList.prototype.forEach=function(cb){for(var i=0;i<this.length;i++)cb(this[i],i,this);};
+try { var x=document.createElement('button');if(typeof x.dataset==='undefined')Object.defineProperty(Element.prototype,'dataset',{get:function(){var obj={};for(var i=0;i<this.attributes.length;i++){var attr=this.attributes[i];if(attr.name.indexOf('data-')===0){var key=attr.name.substr(5).replace(/-([a-z])/g,function(a,b){return b.toUpperCase();});obj[key]=attr.value;}}return obj;}}); }catch(e){}
+})();</script><script>var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+/* Maths Quest – offline exercise and progress engine. No dependencies. */
+(function (root) {
+    'use strict';
+    var WORLD_IDS = ['add', 'sub', 'mul', 'div'];
+    var SYMBOLS = { add: '+', sub: '−', mul: '×', div: '÷' };
+    var WORLDS = {
+        add: { name: 'La Forêt des Sommes', short: 'Addition', emoji: '🌳', color: '#44a27f', desc: 'Rassemble les éclats du soleil.' },
+        sub: { name: 'Le Château des Écarts', short: 'Soustraction', emoji: '🏰', color: '#a181cf', desc: 'Ouvre les portes du vieux château.' },
+        mul: { name: 'L’Atelier des Étoiles', short: 'Multiplication', emoji: '⚙️', color: '#f1a348', desc: 'Remets les machines en marche.' },
+        div: { name: 'L’Archipel du Partage', short: 'Division', emoji: '🏝️', color: '#4b9cc8', desc: 'Répartis les trésors avec justice.' }
+    };
+    var MODES = { flash: { title: 'Calcul éclair', emoji: '⚡', desc: 'Écris le résultat, sans indices imposés.' }, missing: { title: 'Nombre mystère', emoji: '🔍', desc: 'Trouve la valeur cachée.' }, story: { title: 'Histoires à résoudre', emoji: '📜', desc: 'Choisis le bon calcul dans une histoire.' }, detective: { title: 'Détective des erreurs', emoji: '🕵️', desc: 'Répare un calcul incorrect.' }, sequence: { title: 'Suites secrètes', emoji: '🔮', desc: 'Complète une suite logique.' }, column: { title: 'Calcul posé', emoji: '✏️', desc: 'Utilise une ardoise pour poser ton calcul.' }, forge: { title: 'La Forge des signes', emoji: '🛠️', desc: 'Retrouve le signe qui crée le bon résultat.' }, share: { title: 'Partage du trésor', emoji: '💎', desc: 'Distribue les pierres une par une.' }, fraction: { title: 'Fractions magiques', emoji: '🧩', desc: 'Prends une partie d’une quantité (CM1).' }, remainder: { title: 'Division avec reste', emoji: '🧮', desc: 'Trouve le quotient et le reste (CM1).' } };
+    var clamp = function (n, min, max) { return Math.max(min, Math.min(max, n)); };
+    var randint = function (min, max, rng) {
+        if (rng === void 0) { rng = Math.random; }
+        return Math.floor(rng() * (max - min + 1)) + min;
+    };
+    var choose = function (list, rng) {
+        if (rng === void 0) { rng = Math.random; }
+        return list[Math.floor(rng() * list.length)];
+    };
+    var format = function (n) { return Number(n).toLocaleString('fr-FR'); };
+    function createRng(seed) { var a = seed >>> 0; return function () { a += 0x6D2B79F5; var t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+    function arithmetic(world, tier, rng) {
+        if (rng === void 0) { rng = Math.random; }
+        var t = clamp(tier, 0, 3);
+        var a, b, r, op = SYMBOLS[world];
+        if (world === 'add') {
+            var ranges = [[12, 89], [110, 850], [1000, 7999], [5000, 88000]];
+            var _a = ranges[t], min = _a[0], max = _a[1];
+            a = randint(min, max, rng);
+            b = randint(t === 0 ? 8 : t === 1 ? 30 : t === 2 ? 140 : 1200, t === 0 ? 89 : t === 1 ? 720 : t === 2 ? 5600 : 69000, rng);
+            r = a + b;
+        }
+        else if (world === 'sub') {
+            var ranges = [[45, 130], [240, 920], [1200, 8900], [11000, 99000]];
+            var _b = ranges[t], min = _b[0], max = _b[1];
+            a = randint(min, max, rng);
+            b = randint(t === 0 ? 10 : t === 1 ? 42 : t === 2 ? 250 : 1300, a - 1, rng);
+            r = a - b;
+        }
+        else if (world === 'mul') {
+            if (t === 0) {
+                a = randint(2, 5, rng);
+                b = randint(2, 10, rng);
+            }
+            else if (t === 1) {
+                a = randint(3, 9, rng);
+                b = randint(4, 12, rng);
+            }
+            else if (t === 2) {
+                a = randint(12, 89, rng);
+                b = randint(2, 9, rng);
+            }
+            else {
+                a = randint(12, 89, rng);
+                b = randint(11, 29, rng);
+            }
+            r = a * b;
+        }
+        else if (world === 'div') {
+            b = randint(t === 0 ? 2 : 2, t === 0 ? 5 : t === 1 ? 9 : t === 2 ? 9 : 12, rng);
+            var q = randint(t === 0 ? 2 : t === 1 ? 3 : t === 2 ? 11 : 21, t === 0 ? 12 : t === 1 ? 12 : t === 2 ? 84 : 160, rng);
+            a = b * q;
+            r = q;
+        }
+        else {
+            throw Error('Unknown world: ' + world);
+        }
+        return { a: a, b: b, answer: r, op: op, formula: "".concat(format(a), " ").concat(op, " ").concat(format(b)), world: world, tier: t };
+    }
+    function baseExercise(world, tier, mode, formula, prompt, answer, hint, explanation, extra) {
+        if (extra === void 0) { extra = {}; }
+        return __assign({ world: world, tier: tier, mode: mode, formula: formula, prompt: prompt, answer: answer, hint: hint, explanation: explanation }, extra);
+    }
+    function generateExercise(world, tier, mode, rng) {
+        if (tier === void 0) { tier = 0; }
+        if (mode === void 0) { mode = 'flash'; }
+        if (rng === void 0) { rng = Math.random; }
+        if (!WORLD_IDS.includes(world))
+            throw Error('Invalid world');
+        if (!MODES[mode])
+            throw Error('Invalid mode');
+        var t = clamp(tier, 0, 3);
+        if (mode === 'forge') {
+            var _loop_1 = function (iter) {
+                var op = choose(['+', '−', '×', '÷'], rng);
+                var a = void 0, b = void 0, target;
+                if (op === '+') {
+                    a = randint(7, 36 + t * 35, rng);
+                    b = randint(5, 18 + t * 12, rng);
+                    target = a + b;
+                }
+                if (op === '−') {
+                    a = randint(12, 40 + t * 35, rng);
+                    b = randint(2, a - 2, rng);
+                    target = a - b;
+                }
+                if (op === '×') {
+                    a = randint(2, 9 + t * 2, rng);
+                    b = randint(2, 9 + t * 2, rng);
+                    target = a * b;
+                }
+                if (op === '÷') {
+                    b = randint(2, 9, rng);
+                    target = randint(2, 9 + t * 2, rng);
+                    a = b * target;
+                }
+                var operations = { '+': a + b, '−': a - b, '×': a * b, '÷': a / b };
+                if (Object.entries(operations).filter(function (_a) {
+                    var result = _a[1];
+                    return result === target;
+                }).length !== 1)
+                    return "continue";
+                return { value: baseExercise(world, t, mode, 'Quel signe manque ?', "".concat(format(a), "  ?  ").concat(format(b), "  =  ").concat(format(target)), op, 'Essaie chaque opération mentalement.', "".concat(format(a), " ").concat(op, " ").concat(format(b), " = ").concat(format(target), "."), { kind: 'operator', operands: [a, b], target: target }) };
+            };
+            for (var iter = 0; iter < 400; iter++) {
+                var state_1 = _loop_1(iter);
+                if (typeof state_1 === "object")
+                    return state_1.value;
+            }
+            throw Error('Could not generate forge');
+        }
+        if (mode === 'share') {
+            var groups = randint(2, 4, rng);
+            var q = randint(2, Math.floor(20 / groups), rng);
+            var total = groups * q;
+            return baseExercise(world, t, mode, "".concat(total, " \u00F7 ").concat(groups), "R\u00E9partis ".concat(total, " pierres entre ").concat(groups, " coffres. Il doit y avoir autant de pierres dans chaque coffre."), q, "Compte ".concat(groups, " coffres. Chaque coffre doit contenir ").concat(q, " pierres."), "Chaque coffre re\u00E7oit ".concat(q, " pierres : ").concat(total, " \u00F7 ").concat(groups, " = ").concat(q, "."), { kind: 'share', groups: groups, total: total });
+        }
+        if (mode === 'remainder') {
+            var divisor = randint(2, 12, rng), quotient = randint(8, Math.min(120, 30 + t * 22), rng), remainder = randint(1, divisor - 1, rng), total = divisor * quotient + remainder;
+            return baseExercise('div', Math.max(t, 3), mode, "".concat(total, " \u00F7 ").concat(divisor), "On partage ".concat(total, " pierres entre ").concat(divisor, " explorateurs. Combien chacun re\u00E7oit-il, et combien en reste-t-il ?"), { quotient: quotient, remainder: remainder }, "Cherche le plus grand multiple de ".concat(divisor, " qui ne d\u00E9passe pas ").concat(total, "."), "Car ".concat(total, " = ").concat(divisor, " \u00D7 ").concat(quotient, " + ").concat(remainder, ". Et le reste ").concat(remainder, " est plus petit que ").concat(divisor, "."), { kind: 'remainder', total: total, divisor: divisor });
+        }
+        if (mode === 'fraction') {
+            var d = choose([2, 3, 4, 5, 6, 8], rng);
+            var n = randint(1, d - 1, rng);
+            var unit = randint(t >= 3 ? 5 : 2, t >= 3 ? 20 : 12, rng);
+            var total = d * unit;
+            var answer = n * unit;
+            return baseExercise(world, t, mode, "".concat(n, "/").concat(d, " de ").concat(total), "Combien font ".concat(n, "/").concat(d, " de ").concat(total, " cristaux ?"), answer, "Une part sur ".concat(d, " repr\u00E9sente ").concat(unit, " cristaux."), "D\u2019abord ".concat(total, " \u00F7 ").concat(d, " = ").concat(unit, ". Puis ").concat(unit, " \u00D7 ").concat(n, " = ").concat(answer, "."), { kind: 'fraction', numerator: n, denominator: d, total: total });
+        }
+        if (mode === 'sequence') {
+            var step_1 = t === 0 ? randint(2, 9, rng) : t === 1 ? randint(4, 18, rng) : t === 2 ? randint(12, 45, rng) : randint(25, 125, rng);
+            var ascending_1 = (world === 'add' || world === 'mul');
+            if (world === 'mul')
+                step_1 = randint(2, 9 + t * 3, rng) * randint(2, Math.min(6, 2 + t * 2), rng);
+            if (world === 'div')
+                step_1 = randint(2, 9, rng);
+            var start_1 = ascending_1 ? randint(t * 15 + 1, t * 35 + 24, rng) : randint(step_1 * 5 + 15, step_1 * 6 + 90, rng);
+            var seq = Array.from({ length: 4 }, function (_, i) { return start_1 + (ascending_1 ? 1 : -1) * i * step_1; });
+            var answer = start_1 + (ascending_1 ? 1 : -1) * 4 * step_1;
+            return baseExercise(world, t, mode, seq.map(format).join(' → ') + ' → ?', "Quel nombre vient ensuite ?", answer, "Observe la diff\u00E9rence entre deux nombres voisins.", "On ".concat(ascending_1 ? 'ajoute' : 'retire', " ").concat(step_1, " \u00E0 chaque \u00E9tape. Le nombre suivant est ").concat(format(answer), "."), { kind: 'number', sequence: seq, step: ascending_1 ? step_1 : -step_1 });
+        }
+        var calc = arithmetic(world, t, rng);
+        if (mode === 'flash') {
+            return baseExercise(world, t, mode, calc.formula, "Combien font ".concat(calc.formula, " ?"), calc.answer, buildHint(calc), buildExplanation(calc), { kind: 'number', operands: [calc.a, calc.b] });
+        }
+        if (mode === 'column') {
+            if (world === 'div') {
+                return baseExercise(world, t, mode, calc.formula, "Pose et calcule ".concat(calc.formula, "."), calc.answer, "Cherche combien de fois ".concat(calc.b, " entre dans ").concat(calc.a, "."), "".concat(calc.b, " \u00D7 ").concat(calc.answer, " = ").concat(calc.a, "."), { kind: 'number', column: true, operands: [calc.a, calc.b], op: calc.op });
+            }
+            return baseExercise(world, t, mode, calc.formula, "Pose et calcule ".concat(calc.formula, "."), calc.answer, "Aligne les unit\u00E9s sous les unit\u00E9s, les dizaines sous les dizaines.", buildExplanation(calc), { kind: 'number', column: true, operands: [calc.a, calc.b], op: calc.op });
+        }
+        if (mode === 'missing') {
+            var missing = randint(0, 1, rng);
+            var formula = void 0, ans = void 0;
+            if (world === 'add') {
+                formula = missing ? "".concat(format(calc.a), " + ? = ").concat(format(calc.answer)) : "? + ".concat(format(calc.b), " = ").concat(format(calc.answer));
+                ans = missing ? calc.b : calc.a;
+            }
+            if (world === 'sub') {
+                formula = missing ? "".concat(format(calc.a), " \u2212 ? = ").concat(format(calc.answer)) : "? \u2212 ".concat(format(calc.b), " = ").concat(format(calc.answer));
+                ans = missing ? calc.b : calc.a;
+            }
+            if (world === 'mul') {
+                formula = missing ? "".concat(format(calc.a), " \u00D7 ? = ").concat(format(calc.answer)) : "? \u00D7 ".concat(format(calc.b), " = ").concat(format(calc.answer));
+                ans = missing ? calc.b : calc.a;
+            }
+            if (world === 'div') {
+                formula = missing ? "".concat(format(calc.a), " \u00F7 ? = ").concat(format(calc.answer)) : "? \u00F7 ".concat(format(calc.b), " = ").concat(format(calc.answer));
+                ans = missing ? calc.b : calc.a;
+            }
+            return baseExercise(world, t, mode, formula, 'Quel nombre se cache derrière le point d’interrogation ?', ans, "Utilise l\u2019op\u00E9ration inverse pour trouver le nombre cach\u00E9.", "".concat(formula.replace('?', format(ans)), ". L\u2019op\u00E9ration inverse permet de retrouver ").concat(format(ans), "."), { kind: 'number', hidden: missing });
+        }
+        if (mode === 'detective') {
+            var offset = choose([-19, -11, -10, -9, -2, 2, 9, 10, 11, 19], rng);
+            var falseAnswer = calc.answer + offset;
+            if (falseAnswer < 0)
+                falseAnswer = calc.answer + Math.abs(offset);
+            var statement = "".concat(calc.formula, " = ").concat(format(falseAnswer));
+            return baseExercise(world, t, mode, statement, "Pico s\u2019est tromp\u00E9 ! Quel est le vrai r\u00E9sultat ?", calc.answer, buildHint(calc), "Pico a \u00E9crit ".concat(format(falseAnswer), ". ").concat(buildExplanation(calc)), { kind: 'number', wrongAnswer: falseAnswer });
+        }
+        if (mode === 'story') {
+            var stories = {
+                add: ["Au port, ".concat(format(calc.a), " voyageurs arrivent le matin et ").concat(format(calc.b), " l\u2019apr\u00E8s-midi. Combien sont arriv\u00E9s au total ?"), "Le jardin magique contient ".concat(format(calc.a), " fleurs bleues et ").concat(format(calc.b), " fleurs rouges. Combien y a-t-il de fleurs ?"), "Pico a d\u00E9j\u00E0 trouv\u00E9 ".concat(format(calc.a), " pi\u00E8ces. Il en d\u00E9couvre ").concat(format(calc.b), " autres. Quel est son total ?")],
+                sub: ["La biblioth\u00E8que poss\u00E8de ".concat(format(calc.a), " livres. ").concat(format(calc.b), " sont emprunt\u00E9s. Combien restent dans les rayons ?"), "Le dragon garde ".concat(format(calc.a), " cristaux. Il en offre ").concat(format(calc.b), " au village. Combien lui en reste-t-il ?"), "Un ballon parcourt ".concat(format(calc.a), " m\u00E8tres. Il doit parcourir ").concat(format(calc.b), " m\u00E8tres de moins au retour. Quelle est la longueur du retour ?")],
+                mul: ["Il y a ".concat(format(calc.a), " sacs contenant chacun ").concat(format(calc.b), " billes. Combien y a-t-il de billes ?"), "Un th\u00E9\u00E2tre poss\u00E8de ".concat(format(calc.a), " rang\u00E9es de ").concat(format(calc.b), " fauteuils. Combien de places ?"), "Chaque robot poss\u00E8de ".concat(format(calc.b), " boutons et il y a ").concat(format(calc.a), " robots. Combien de boutons au total ?")],
+                div: ["On r\u00E9partit ".concat(format(calc.a), " \u00E9toiles dans ").concat(format(calc.b), " bo\u00EEtes identiques. Combien d\u2019\u00E9toiles par bo\u00EEte ?"), "Un pirate partage ".concat(format(calc.a), " pi\u00E8ces entre ").concat(format(calc.b), " amis, \u00E9galement. Combien chacun re\u00E7oit-il ?"), "On range ".concat(format(calc.a), " fleurs en ").concat(format(calc.b), " bouquets identiques. Combien de fleurs par bouquet ?")]
+            };
+            return baseExercise(world, t, mode, calc.formula, choose(stories[world], rng), calc.answer, "Cherche d\u2019abord si l\u2019histoire demande de r\u00E9unir, retirer, r\u00E9p\u00E9ter ou partager.", buildExplanation(calc), { kind: 'number', story: true });
+        }
+        throw Error('Mode not implemented: ' + mode);
+    }
+    function buildExplanation(calc) {
+        var a = calc.a, b = calc.b, answer = calc.answer, world = calc.world;
+        if (world === 'add') {
+            var tens = b - (b % 10), units = b % 10;
+            if (tens > 0 && units > 0)
+                return "".concat(format(a), " + ").concat(format(tens), " = ").concat(format(a + tens), ", puis on ajoute ").concat(units, " : ").concat(format(answer), ".");
+            return "".concat(format(a), " + ").concat(format(b), " = ").concat(format(answer), ".");
+        }
+        if (world === 'sub') {
+            var tens = b - (b % 10), units = b % 10;
+            if (tens > 0 && units > 0)
+                return "".concat(format(a), " \u2212 ").concat(format(tens), " = ").concat(format(a - tens), ", puis on retire ").concat(units, " : ").concat(format(answer), ".");
+            return "".concat(format(a), " \u2212 ").concat(format(b), " = ").concat(format(answer), ".");
+        }
+        if (world === 'mul') {
+            if (b >= 10) {
+                var tens = b - (b % 10), units = b % 10;
+                if (units)
+                    return "".concat(format(a), " \u00D7 ").concat(format(tens), " = ").concat(format(a * tens), " et ").concat(format(a), " \u00D7 ").concat(units, " = ").concat(format(a * units), ". Ensemble : ").concat(format(answer), ".");
+            }
+            return "".concat(format(a), " groupes de ").concat(format(b), " donnent ").concat(format(answer), ".");
+        }
+        return "On v\u00E9rifie par une multiplication : ".concat(format(b), " \u00D7 ").concat(format(answer), " = ").concat(format(a), ".");
+    }
+    function buildHint(calc) {
+        if (calc.world === 'add')
+            return "D\u00E9compose : ".concat(format(calc.a), " + ").concat(format(calc.b), ". Commence par les dizaines ou les centaines.");
+        if (calc.world === 'sub')
+            return "Pour ".concat(calc.formula, ", soustrais d\u2019abord les dizaines, puis les unit\u00E9s.");
+        if (calc.world === 'mul')
+            return "Pense \u00E0 ".concat(calc.a, " groupes de ").concat(calc.b, ", ou d\u00E9compose ").concat(calc.b, ".");
+        return "Quel nombre multipli\u00E9 par ".concat(calc.b, " donne ").concat(calc.a, " ?");
+    }
+    function normalizeNumber(value) { var cleaned = String(value !== null && value !== void 0 ? value : '').replace(/[\u00a0\u202f\s]/g, '').replace(',', '.'); if (!/^-?\d+(\.\d+)?$/.test(cleaned))
+        return NaN; return Number(cleaned); }
+    function verify(exercise, received) {
+        if (exercise.kind === 'operator')
+            return String(received) === exercise.answer;
+        if (exercise.kind === 'remainder')
+            return !!received && normalizeNumber(received.quotient) === exercise.answer.quotient && normalizeNumber(received.remainder) === exercise.answer.remainder;
+        if (exercise.kind === 'share') {
+            if (!Array.isArray(received) || received.length !== exercise.groups)
+                return false;
+            return received.every(function (x) { return Number.isInteger(x) && x === exercise.answer; }) && received.reduce(function (s, x) { return s + x; }, 0) === exercise.total;
+        }
+        return normalizeNumber(received) === exercise.answer;
+    }
+    function makeEmpty() { return { version: 1, xp: 0, history: [], settings: { dailyGoal: 10, sound: true, level: 'auto' }, worlds: Object.fromEntries(WORLD_IDS.map(function (id) { return [id, { tier: 0, attempts: 0, correct: 0, byTier: [[], [], [], []] }]; })), lastPlayed: null, unlocked: [] }; }
+    function sanitizeProgress(raw) {
+        var base = makeEmpty();
+        if (!raw || typeof raw !== 'object')
+            return base;
+        base.xp = clamp(Number(raw.xp) || 0, 0, 10000000);
+        if (raw.settings && typeof raw.settings === 'object') {
+            base.settings.dailyGoal = [6, 10, 15, 20].includes(raw.settings.dailyGoal) ? raw.settings.dailyGoal : 10;
+            base.settings.sound = raw.settings.sound !== false;
+            base.settings.level = ['auto', '0', '1', '2', '3'].includes(raw.settings.level) ? raw.settings.level : 'auto';
+        }
+        var _loop_2 = function (id) {
+            var x = raw.worlds && raw.worlds[id];
+            if (!x)
+                return "continue";
+            var b = base.worlds[id];
+            b.tier = clamp(Math.floor(Number(x.tier) || 0), 0, 3);
+            b.attempts = clamp(Math.floor(Number(x.attempts) || 0), 0, 1000000);
+            b.correct = clamp(Math.floor(Number(x.correct) || 0), 0, b.attempts);
+            if (Array.isArray(x.byTier))
+                b.byTier = [0, 1, 2, 3].map(function (i) { return Array.isArray(x.byTier[i]) ? x.byTier[i].slice(-20).filter(function (y) { return y && typeof y.correct === 'boolean'; }).map(function (y) { return ({ correct: y.correct, hint: !!y.hint }); }) : []; });
+        };
+        for (var _i = 0, WORLD_IDS_1 = WORLD_IDS; _i < WORLD_IDS_1.length; _i++) {
+            var id = WORLD_IDS_1[_i];
+            _loop_2(id);
+        }
+        if (Array.isArray(raw.history))
+            base.history = raw.history.slice(-500).filter(function (x) { return x && WORLD_IDS.includes(x.world) && typeof x.correct === 'boolean' && typeof x.date === 'string'; }).map(function (x) { return ({ world: x.world, mode: MODES[x.mode] ? x.mode : 'flash', tier: clamp(Number(x.tier) || 0, 0, 3), date: x.date, correct: x.correct }); });
+        if (typeof raw.lastPlayed === 'string')
+            base.lastPlayed = raw.lastPlayed;
+        return base;
+    }
+    function registerResult(state, world, tier, mode, correct, usedHint, now) {
+        if (now === void 0) { now = new Date(); }
+        if (!WORLD_IDS.includes(world))
+            throw Error('Invalid world');
+        var w = state.worlds[world];
+        var t = clamp(tier, 0, 3);
+        w.attempts++;
+        if (correct)
+            w.correct++;
+        w.byTier[t].push({ correct: !!correct, hint: !!usedHint });
+        w.byTier[t] = w.byTier[t].slice(-20);
+        // Advance after at least 8 recent answers, >= 85% correct and >= 6 without hints.
+        if (t === w.tier && t < 3) {
+            var recent = w.byTier[t].slice(-10);
+            if (recent.length >= 8 && recent.filter(function (x) { return x.correct; }).length / recent.length >= .85 && recent.filter(function (x) { return x.correct && !x.hint; }).length >= 6)
+                w.tier = t + 1;
+        }
+        state.xp += correct ? (usedHint ? 10 : 15) : 2;
+        var date = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+        state.history.push({ world: world, mode: mode, tier: t, date: date, correct: !!correct });
+        state.history = state.history.slice(-500);
+        state.lastPlayed = date;
+        return { tier: w.tier, xp: state.xp };
+    }
+    function dailyProgress(state, now) {
+        if (now === void 0) { now = new Date(); }
+        var date = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+        return state.history.filter(function (x) { return x.date === date; }).length;
+    }
+    function accuracy(state) { var total = 0, correct = 0; for (var _i = 0, _a = Object.values(state.worlds); _i < _a.length; _i++) {
+        var w = _a[_i];
+        total += w.attempts;
+        correct += w.correct;
+    } return total ? Math.round(correct / total * 100) : 0; }
+    var api = { WORLD_IDS: WORLD_IDS, SYMBOLS: SYMBOLS, WORLDS: WORLDS, MODES: MODES, clamp: clamp, randint: randint, choose: choose, format: format, createRng: createRng, arithmetic: arithmetic, generateExercise: generateExercise, normalizeNumber: normalizeNumber, verify: verify, makeEmpty: makeEmpty, sanitizeProgress: sanitizeProgress, registerResult: registerResult, dailyProgress: dailyProgress, accuracy: accuracy };
+    if (typeof module !== 'undefined' && module.exports)
+        module.exports = api;
+    root.MathsEngine = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script><script>/* Maths Quest — interactive interface. Local-only, framework-free. */
+(function () {
+    'use strict';
+    var E = window.MathsEngine;
+    if (!E) {
+        document.body.textContent = 'Le moteur de maths est indisponible.';
+        return;
+    }
+    var STORE_KEY = 'maths-quest-v1';
+    var app = document.getElementById('app');
+    var announcer = document.getElementById('announcer');
+    var progress;
+    try {
+        progress = E.sanitizeProgress(JSON.parse(localStorage.getItem(STORE_KEY) || 'null'));
+    }
+    catch (_) {
+        progress = E.makeEmpty();
+    }
+    var ui = { page: 'map', world: 'add', chosenTier: progress.settings.level, game: null, toast: '', audiocontext: null };
+    var toastTimeout = null;
+    function save() { try {
+        localStorage.setItem(STORE_KEY, JSON.stringify(progress));
+    }
+    catch (_) {
+        notify('Sauvegarde locale indisponible dans ce navigateur.');
+    } }
+    function esc(str) { return String(str).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]); }); }
+    function notify(text) { announcer.textContent = text; ui.toast = text; var old = document.querySelector('.toast'); if (old)
+        old.remove(); var div = document.createElement('div'); div.className = 'toast'; div.setAttribute('role', 'status'); div.textContent = text; document.body.appendChild(div); clearTimeout(toastTimeout); toastTimeout = setTimeout(function () { div.remove(); ui.toast = ''; }, 2800); }
+    function beep(good) {
+        if (good === void 0) { good = true; }
+        if (!progress.settings.sound)
+            return;
+        try {
+            var C = window.AudioContext || window.webkitAudioContext;
+            if (!C)
+                return;
+            var ctx = ui.audiocontext || (ui.audiocontext = new C());
+            if (ctx.state === 'suspended')
+                ctx.resume();
+            var o = ctx.createOscillator(), g = ctx.createGain();
+            o.type = 'sine';
+            o.frequency.setValueAtTime(good ? 590 : 240, ctx.currentTime);
+            o.frequency.exponentialRampToValueAtTime(good ? 850 : 190, ctx.currentTime + .14);
+            g.gain.setValueAtTime(.037, ctx.currentTime);
+            g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .18);
+            o.connect(g).connect(ctx.destination);
+            o.start();
+            o.stop(ctx.currentTime + .19);
+        }
+        catch (_) { /* sound is optional */ }
+    }
+    var levelNames = ['CE2 · découverte', 'CE2 · explorateur', 'CE2 · expert', 'CM1 · défi'];
+    var shortLevels = ['CE2 ★', 'CE2 ★★', 'CE2 ★★★', 'CM1'];
+    function worldStats(world) { var p = progress.worlds[world]; var recent = p.byTier[p.tier].slice(-10), good = recent.filter(function (i) { return i.correct; }).length; return { p: p, attempts: p.attempts, accuracy: p.attempts ? Math.round(p.correct / p.attempts * 100) : 0, tier: p.tier, mastery: recent.length ? Math.round(good / recent.length * 100) : 0 }; }
+    function sectionHeader(title, subtitle, link) { return "<div class=\"section-head\"><div><h2>".concat(title, "</h2>").concat(subtitle ? "<div class=\"section-sub\">".concat(subtitle, "</div>") : '', "</div>").concat(link || '', "</div>"); }
+    function heroSvg() {
+        return "<svg class=\"island-art\" viewBox=\"0 0 370 310\" role=\"img\" aria-label=\"\u00CEle flottante avec un phare et des montagnes\">\n <defs><linearGradient id=\"rock\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#85a8a2\"/><stop offset=\"1\" stop-color=\"#3c7d75\"/></linearGradient><linearGradient id=\"roof\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#fbd589\"/><stop offset=\"1\" stop-color=\"#e89262\"/></linearGradient></defs>\n <ellipse cx=\"194\" cy=\"254\" rx=\"138\" ry=\"23\" fill=\"#061e35\" opacity=\".22\"/>\n <path d=\"M32 182Q81 163 110 154Q168 128 231 147Q287 148 339 176L293 224L253 237L229 267L200 279L157 259L130 233L82 214Z\" fill=\"url(#rock)\"/>\n <path d=\"M32 181Q120 145 169 142Q251 125 339 176Q296 196 222 196Q115 207 32 181Z\" fill=\"#a4d28e\"/><path d=\"M62 180Q172 160 304 181\" stroke=\"#c0ec9c\" stroke-width=\"9\" fill=\"none\" opacity=\".6\"/>\n <path d=\"M125 159L154 127L184 156Z\" fill=\"#65a4a2\"/><path d=\"M238 164L268 128L297 174Z\" fill=\"#85aba0\"/>\n <rect x=\"172\" y=\"82\" width=\"49\" height=\"96\" rx=\"6\" fill=\"#fff6d5\"/><path d=\"M172 119H221V136H172Z\" fill=\"#ffba6a\"/><path d=\"M164 78L196 51L230 78Z\" fill=\"url(#roof)\"/><rect x=\"180\" y=\"93\" width=\"33\" height=\"22\" rx=\"5\" fill=\"#64bfc1\"/><path d=\"M195 40V53\" stroke=\"#fde3a0\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M183 104L101 73L104 122Z\" fill=\"#ffedab\" opacity=\".22\"/><path d=\"M211 104L290 69L287 126Z\" fill=\"#ffedab\" opacity=\".22\"/>\n <rect x=\"193\" y=\"148\" width=\"12\" height=\"30\" rx=\"6\" fill=\"#b78361\"/>\n <path d=\"M80 177V148M74 153Q57 142 74 132Q84 112 95 130Q115 139 98 152Z\" fill=\"#3b9b76\" stroke=\"#237c67\" stroke-width=\"3\"/><path d=\"M277 177V152M265 149Q251 138 264 126Q277 106 292 127Q314 138 292 150Z\" fill=\"#449775\" stroke=\"#2a806b\" stroke-width=\"3\"/>\n <circle cx=\"112\" cy=\"105\" r=\"5\" fill=\"#f6d778\"/><circle cx=\"312\" cy=\"105\" r=\"4\" fill=\"#f6d778\"/><path d=\"M70 86L75 96L85 101L75 106L70 117L65 106L56 101L65 96Z\" fill=\"#f5d987\"/><path d=\"M287 37L293 52L308 58L293 64L287 77L281 64L269 58L281 52Z\" fill=\"#f7ca74\"/>\n <path d=\"M94 223Q179 241 286 221\" fill=\"none\" stroke=\"#a9eee2\" stroke-width=\"3\" opacity=\".5\"/>\n </svg>";
+    }
+    function header() { return "<header class=\"topbar\"><button class=\"brand\" data-action=\"go\" data-page=\"map\" aria-label=\"Accueil Maths Quest\"><span class=\"brand-symbol\">\u2726</span><span><span class=\"brand-label\">Maths Quest</span><span class=\"brand-sub\">L'archipel des nombres</span></span></button><nav class=\"desktop-nav\" aria-label=\"Navigation principale sur ordinateur\">".concat([['map', '🗺️', 'Aventure'], ['practice', '⚡', 'Jouer'], ['collection', '🏆', 'Trésors'], ['parents', '⚙️', 'Parents']].map(function (_a) {
+        var page = _a[0], icon = _a[1], label = _a[2];
+        return "<button class=\"desktop-nav-item ".concat(ui.page === page ? 'active' : '', "\" data-action=\"go\" data-page=\"").concat(page, "\" ").concat(ui.page === page ? 'aria-current="page"' : '', ">").concat(icon, " ").concat(label, "</button>");
+    }).join(''), "</nav><div class=\"top-actions\"><span class=\"stat-chip\" title=\"\u00C9toiles d\u2019exp\u00E9rience\">\u2B50 ").concat(E.format(progress.xp), "</span><button class=\"round-icon\" data-action=\"go\" data-page=\"parents\" aria-label=\"Espace parents\">\u2699\uFE0F</button></div></header>"); }
+    function navigation() { var pages = [['map', '🗺️', 'Aventure'], ['practice', '⚡', 'Jouer'], ['collection', '🏆', 'Trésors'], ['parents', '⚙️', 'Parents']]; return "<nav class=\"bottom-nav\" aria-label=\"Navigation principale\">".concat(pages.map(function (_a) {
+        var page = _a[0], icon = _a[1], label = _a[2];
+        return "<button class=\"nav-item ".concat(ui.page === page ? 'active' : '', "\" data-action=\"go\" data-page=\"").concat(page, "\" aria-current=\"").concat(ui.page === page ? 'page' : 'false', "\"><span class=\"nav-icon\">").concat(icon, "</span><span>").concat(label, "</span></button>");
+    }).join(''), "</nav>"); }
+    function mapPage() {
+        var completed = E.dailyProgress(progress), goal = progress.settings.dailyGoal, all = Object.values(progress.worlds).reduce(function (a, b) { return a + b.correct; }, 0);
+        var story = all === 0 ? 'Le grand phare des nombres s’est éteint. Aide Pico à retrouver les quatre éclats cachés dans les îles !' : all < 15 ? 'Pico a retrouvé une première piste ! Continue les missions pour réveiller la lumière du phare.' : all < 50 ? 'La carte s’illumine : de nouveaux mystères apparaissent dans l’archipel.' : 'Le phare brille de plus en plus fort grâce à tes découvertes. Les défis CM1 t’attendent !';
+        return "<section class=\"hero\"><div class=\"hero-copy\"><div class=\"eyebrow\">\u2726 Chapitre 1 \u00B7 La lumi\u00E8re perdue</div><h1>Les maths sont une <span style=\"color:#f6ca78\">aventure !</span></h1><p>".concat(story, "</p><button class=\"btn btn-primary\" data-action=\"start\" data-type=\"daily\">\uD83C\uDF92 ").concat(completed >= goal ? 'Repartir en mission' : 'Ma mission du jour', " <span aria-hidden=\"true\">\u279C</span></button></div><div class=\"hero-art\"><div class=\"hero-star\">\u2728</div>").concat(heroSvg(), "<div class=\"hero-spark\">\u2B50</div></div></section>\n <div class=\"daily-card\"><div class=\"daily-icon\">\uD83C\uDFAF</div><div class=\"daily-copy\"><div class=\"daily-title\">Objectif du jour \u00B7 ").concat(Math.min(completed, goal), " / ").concat(goal, "</div><div class=\"daily-sub\">").concat(completed >= goal ? 'Mission accomplie ! Tu peux continuer pour le plaisir.' : 'Une petite aventure chaque jour pour progresser.', "</div><div class=\"progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(goal, "\" aria-valuenow=\"").concat(Math.min(completed, goal), "\"><span style=\"width:").concat(Math.min(completed / goal * 100, 100), "%\"></span></div></div><button class=\"btn btn-dark btn-small\" data-action=\"start\" data-type=\"daily\">Jouer \u2192</button></div>\n <section class=\"section\">").concat(sectionHeader('Explore les quatre îles', 'Chaque île devient plus difficile à mesure que tu progresses.'), "<div class=\"world-grid\">").concat(E.WORLD_IDS.map(function (id) { var w = E.WORLDS[id], s = worldStats(id); return "<button class=\"world-card\" data-action=\"start\" data-type=\"adventure\" data-world=\"".concat(id, "\" aria-label=\"Jouer dans ").concat(esc(w.name), "\"><div class=\"world-scene world-tint-").concat(id, "\"><span class=\"world-emoji\">").concat(w.emoji, "</span><span class=\"world-level\">").concat(shortLevels[s.tier], "</span></div><div class=\"world-body\"><div class=\"world-title\">").concat(w.name, "</div><p class=\"world-subtitle\">").concat(w.desc, "</p><div class=\"world-meta\"><span class=\"stars\">").concat('★'.repeat(Math.min(3, Math.floor(s.p.correct / 10)))).concat('☆'.repeat(3 - Math.min(3, Math.floor(s.p.correct / 10))), "</span><span class=\"world-arrow\">\u279C</span></div></div></button>"); }).join(''), "</div></section>\n <section class=\"section\">").concat(sectionHeader('Envie d’un autre défi ?', 'Choisis ton jeu préféré ou tente directement le niveau CM1.'), "<div class=\"resource-strip\"><button class=\"btn btn-outline\" data-action=\"go\" data-page=\"practice\">\uD83C\uDFB2 Tous les mini-jeux \u2192</button><button class=\"btn btn-outline\" data-action=\"set-page-cm1\">\uD83D\uDE80 Essayer le CM1 \u2192</button></div></section>");
+    }
+    function practicePage() {
+        var levelChoices = [['auto', 'Auto'], ['0', 'CE2 ★'], ['1', 'CE2 ★★'], ['2', 'CE2 ★★★'], ['3', 'CM1']];
+        return "<div class=\"main-heading\"><p class=\"eyebrow-dark\">Atelier des d\u00E9fis</p><h1>\u00C0 toi de jouer ! \uD83C\uDFB2</h1></div><p class=\"page-intro\">Ici, tu choisis les maths que tu veux pratiquer. Les r\u00E9ponses se tapent directement, sans QCM.</p><section class=\"panel\"><div class=\"setup-label\" style=\"margin-top:0\">1 \u00B7 Choisis ton \u00EEle</div><div class=\"world-tabs\" role=\"group\" aria-label=\"Op\u00E9ration\">".concat(E.WORLD_IDS.map(function (id) { return "<button class=\"pill ".concat(ui.world === id ? 'selected' : '', "\" data-action=\"world\" data-world=\"").concat(id, "\" aria-pressed=\"").concat(ui.world === id, "\">").concat(E.WORLDS[id].emoji, " ").concat(E.WORLDS[id].short, "</button>"); }).join(''), "</div><div class=\"setup-label\">2 \u00B7 Choisis la difficult\u00E9</div><div class=\"level-tabs\" role=\"group\" aria-label=\"Niveau\">").concat(levelChoices.map(function (_a) {
+            var id = _a[0], name = _a[1];
+            return "<button class=\"pill ".concat(ui.chosenTier === id ? 'selected' : '', "\" data-action=\"level\" data-tier=\"").concat(id, "\" aria-pressed=\"").concat(ui.chosenTier === id, "\">").concat(name, "</button>");
+        }).join(''), "</div><div class=\"setup-hint\">").concat(ui.chosenTier === 'auto' ? "\uD83C\uDF31 Niveau automatique actuel : <strong>".concat(levelNames[progress.worlds[ui.world].tier], "</strong>. Tu passes \u00E0 l'\u00E9tape suivante avec des r\u00E9ussites r\u00E9guli\u00E8res.") : ui.chosenTier === '3' ? '🚀 Défi CM1 : nombres plus grands et calculs exigeants. Tu peux revenir au CE2 quand tu veux.' : '💡 Difficulté choisie librement. La progression automatique continue à mesurer tes réussites.', "</div></section>\n <section class=\"section\">").concat(sectionHeader('Choisis un mini-jeu', 'Tous les jeux sont jouables sans connexion.'), "<div class=\"mode-grid\">").concat(Object.entries(E.MODES).map(function (_a) {
+            var id = _a[0], m = _a[1];
+            return "<button class=\"mode-card\" data-action=\"start\" data-type=\"practice\" data-mode=\"".concat(id, "\"><span class=\"mode-card-icon\">").concat(m.emoji, "</span><strong>").concat(m.title, "</strong><p>").concat(m.desc, "</p>").concat(id === 'fraction' || id === 'remainder' ? '<span class="mode-badge">Défi CM1</span>' : '', "</button>");
+        }).join(''), "</div></section>");
+    }
+    function achievements() {
+        var total = Object.values(progress.worlds).reduce(function (n, p) { return n + p.attempts; }, 0), correct = Object.values(progress.worlds).reduce(function (n, p) { return n + p.correct; }, 0);
+        var tiers = E.WORLD_IDS.filter(function (id) { return progress.worlds[id].tier >= 1; }).length;
+        var all = E.WORLD_IDS.every(function (id) { return progress.worlds[id].attempts > 0; });
+        var cm1 = progress.history.some(function (h) { return h.tier === 3; });
+        return [
+            ['🌱', 'Premier pas', 'Résoudre un exercice', total >= 1], ['🌟', 'En pleine forme', 'Réussir 10 exercices', correct >= 10], ['🧭', 'Exploratrice', 'Visiter les quatre îles', all], ['💡', 'Déclic', 'Débloquer un niveau', tiers >= 1], ['🔮', 'Tête chercheuse', 'Réussir 50 exercices', correct >= 50], ['🚀', 'Cap sur le CM1', 'Tenter un défi CM1', cm1], ['🏅', 'Centenaire', 'Réussir 100 exercices', correct >= 100], ['👑', 'Grande savante', 'Débloquer le CM1 automatiquement', E.WORLD_IDS.some(function (id) { return progress.worlds[id].tier === 3; })], ['🎇', 'Gardienne du phare', 'Réussir 250 exercices', correct >= 250]
+        ];
+    }
+    function collectionPage() {
+        var total = Object.values(progress.worlds).reduce(function (n, p) { return n + p.attempts; }, 0);
+        var achieved = achievements();
+        return "<div class=\"main-heading\"><p class=\"eyebrow-dark\">Carnet de bord</p><h1>Mes tr\u00E9sors \uD83C\uDFC6</h1></div><p class=\"page-intro\">Chaque d\u00E9couverte compte. Les \u00E9toiles r\u00E9compensent tes efforts, m\u00EAme quand tu as besoin d'un indice.</p><div class=\"resource-strip\"><div class=\"panel\"><div class=\"big-number\">".concat(E.format(progress.xp), "</div><div class=\"tiny\">\u2B50 \u00C9toiles gagn\u00E9es</div></div><div class=\"panel\"><div class=\"big-number\">").concat(total, "</div><div class=\"tiny\">\uD83E\uDDEE D\u00E9fis tent\u00E9s</div></div><div class=\"panel\"><div class=\"big-number\">").concat(total ? E.accuracy(progress) + ' %' : '—', "</div><div class=\"tiny\">\uD83C\uDFAF R\u00E9ussite globale</div></div></div>\n <section class=\"section\">").concat(sectionHeader('Mes compétences', 'Les quatre îles progressent indépendamment.'), "<div class=\"panel\">").concat(E.WORLD_IDS.map(function (id) { var w = E.WORLDS[id], s = worldStats(id); return "<div class=\"progress-row\"><span class=\"progress-row-label\">".concat(w.emoji, " ").concat(w.short, "</span><div class=\"progress\"><span style=\"width:").concat(s.attempts ? s.accuracy : 0, "%;background:").concat(w.color, "\"></span></div><span class=\"progress-row-percent\">").concat(s.attempts ? s.accuracy + ' %' : '—', "</span></div><div class=\"tiny\" style=\"margin:-5px 0 15px 120px\">").concat(levelNames[s.tier], " \u00B7 ").concat(s.attempts, " d\u00E9fis</div>"); }).join(''), "</div></section>\n <section class=\"section\">").concat(sectionHeader("Mes badges \u00B7 ".concat(achieved.filter(function (a) { return a[3]; }).length, "/").concat(achieved.length), 'Débloque-les avec les maths !'), "<div class=\"ach-grid\">").concat(achieved.map(function (_a) {
+            var icon = _a[0], title = _a[1], desc = _a[2], earned = _a[3];
+            return "<div class=\"ach-card ".concat(earned ? 'earned' : '', "\"><span class=\"ach-icon\">").concat(icon, "</span><strong>").concat(title, "</strong><span class=\"tiny\">").concat(desc, "</span></div>");
+        }).join(''), "</div></section>");
+    }
+    function parentsPage() {
+        var total = Object.values(progress.worlds).reduce(function (n, p) { return n + p.attempts; }, 0);
+        return "<div class=\"main-heading\"><p class=\"eyebrow-dark\">Espace parents</p><h1>Suivre ses progr\u00E8s \u2699\uFE0F</h1></div><p class=\"page-intro\">Pas de compte, de publicit\u00E9 ou de suivi externe. Les r\u00E9sultats restent sur cet appareil.</p><div class=\"resource-strip\"><div class=\"panel\"><div class=\"big-number\">".concat(total, "</div><div class=\"tiny\">Exercices r\u00E9alis\u00E9s</div></div><div class=\"panel\"><div class=\"big-number\">").concat(total ? E.accuracy(progress) + ' %' : '—', "</div><div class=\"tiny\">Pr\u00E9cision globale</div></div><div class=\"panel\"><div class=\"big-number\">").concat(E.dailyProgress(progress), "</div><div class=\"tiny\">Exercices aujourd'hui</div></div></div>\n <section class=\"section parent-grid\"><div class=\"panel\"><h2>R\u00E9glages</h2><p class=\"help-note\">Des sessions courtes et r\u00E9guli\u00E8res sont g\u00E9n\u00E9ralement pr\u00E9f\u00E9rables \u00E0 de longues s\u00E9ries.</p><label class=\"setup-label\" for=\"daily-goal\" style=\"display:block\">Objectif quotidien</label><select class=\"select-field\" id=\"daily-goal\" data-action=\"goal\"><option value=\"6\" ").concat(progress.settings.dailyGoal === 6 ? 'selected' : '', ">6 exercices</option><option value=\"10\" ").concat(progress.settings.dailyGoal === 10 ? 'selected' : '', ">10 exercices</option><option value=\"15\" ").concat(progress.settings.dailyGoal === 15 ? 'selected' : '', ">15 exercices</option><option value=\"20\" ").concat(progress.settings.dailyGoal === 20 ? 'selected' : '', ">20 exercices</option></select><div class=\"settings-row\"><label for=\"sound-toggle\">Petits sons de r\u00E9ussite</label><button id=\"sound-toggle\" class=\"pill ").concat(progress.settings.sound ? 'selected' : '', "\" data-action=\"sound\" aria-pressed=\"").concat(progress.settings.sound, "\">").concat(progress.settings.sound ? 'Activés 🔊' : 'Désactivés 🔇', "</button></div></div>\n <div class=\"panel\"><h2>Comprendre l'adaptation</h2><p class=\"help-note\">Une \u00EEle monte de niveau apr\u00E8s au moins 8 r\u00E9ponses r\u00E9centes, environ 85 % de r\u00E9ussites et 6 bonnes r\u00E9ponses sans indice. Ce seuil est un r\u00E9glage du jeu, pas un diagnostic scolaire.</p><p class=\"help-note\">Le niveau CM1 est accessible librement dans l\u2019atelier, m\u00EAme si le CE2 n'est pas enti\u00E8rement termin\u00E9.</p><p class=\"help-note\">Une erreur donne droit \u00E0 une nouvelle tentative avant d'afficher l'explication.</p></div></section>\n <section class=\"section\">").concat(sectionHeader('Détails par opération', 'La maîtrise correspond aux exercices récents de chaque niveau.'), "<div class=\"panel\">").concat(E.WORLD_IDS.map(function (id) { var w = E.WORLDS[id], s = worldStats(id); var recent = s.p.byTier[s.p.tier].slice(-10); return "<div class=\"progress-row\"><span class=\"progress-row-label\">".concat(w.emoji, " ").concat(w.short, "</span><div class=\"progress\"><span style=\"width:").concat(s.mastery, "%;background:").concat(w.color, "\"></span></div><span class=\"progress-row-percent\">").concat(recent.length ? s.mastery + ' %' : '—', "</span></div><p class=\"tiny\" style=\"margin:-4px 0 14px 120px\">").concat(levelNames[s.tier], " \u00B7 ").concat(s.p.correct, "/").concat(s.p.attempts, " r\u00E9ussis</p>"); }).join(''), "</div></section>\n <section class=\"section\"><div class=\"panel\"><h2>Mes donn\u00E9es</h2><p class=\"help-note\">La progression est sauvegard\u00E9e dans le navigateur utilis\u00E9. Exporter une copie permet de la transf\u00E9rer sur un autre appareil.</p><div class=\"parent-buttons\"><button class=\"btn btn-outline btn-small\" data-action=\"export\">\u2B07\uFE0F Exporter ma sauvegarde</button><button class=\"btn btn-outline btn-small\" data-action=\"import\">\u2B06\uFE0F Importer une sauvegarde</button><input id=\"import-file\" type=\"file\" accept=\".json,application/json\" hidden><button class=\"danger-button\" data-action=\"reset\">Effacer les progr\u00E8s</button></div></div></section><p class=\"footer-note\">Maths Quest \u00B7 Version 1.0 \u00B7 Toutes les donn\u00E9es sont locales.</p>");
+    }
+    function fieldHTML(game) { var isRem = game.exercise.kind === 'remainder'; return "<div class=\"number-wrap\">".concat(isRem ? "<div class=\"remainder-fields\"><div><label class=\"answer-label\" for=\"number-answer\">Quotient</label><input class=\"number-field ".concat(game.focusedField === 'answer' ? 'active-field' : '', "\" id=\"number-answer\" type=\"text\" inputmode=\"none\" maxlength=\"10\" placeholder=\"?\" value=\"").concat(esc(game.answer), "\" aria-label=\"Quotient\"></div><div><label class=\"answer-label\" for=\"remainder-answer\">Reste</label><input class=\"number-field ").concat(game.focusedField === 'remainder' ? 'active-field' : '', "\" id=\"remainder-answer\" type=\"text\" inputmode=\"none\" maxlength=\"10\" placeholder=\"?\" value=\"").concat(esc(game.remainder), "\" aria-label=\"Reste\"></div></div>") : "<label class=\"answer-label\" for=\"number-answer\">\u00C9cris ta r\u00E9ponse</label><input class=\"number-field\" id=\"number-answer\" type=\"text\" inputmode=\"none\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\" maxlength=\"10\" placeholder=\"?\" value=\"".concat(esc(game.answer), "\" aria-label=\"R\u00E9sultat du calcul\">"), "<div class=\"keypad\" aria-label=\"Pav\u00E9 num\u00E9rique\">").concat(['1', '2', '3', '4', '5', '6', '7', '8', '9', 'C', '0', '⌫'].map(function (key) { return "<button type=\"button\" class=\"key ".concat(key === 'C' ? 'clear' : key === '⌫' ? 'back' : '', "\" data-action=\"keypad\" data-key=\"").concat(key, "\" aria-label=\"").concat(key === 'C' ? 'Effacer tout' : key === '⌫' ? 'Effacer un chiffre' : key, "\">").concat(key, "</button>"); }).join(''), "</div></div>"); }
+    function shareHTML(game) { var ex = game.exercise, left = ex.total - game.allocations.reduce(function (a, b) { return a + b; }, 0); return "<div class=\"answer-area\"><span class=\"answer-label\">Touche les coffres pour ajouter une pierre</span><div class=\"share-pile\"><strong>\uD83D\uDC8E Pierres restantes : ".concat(left, "</strong><div class=\"pile-gems\" aria-hidden=\"true\">").concat('💎'.repeat(Math.min(left, 12)), "</div></div><div class=\"share-grid\">").concat(game.allocations.map(function (n, i) { return "<div class=\"chest\"><div class=\"chest-top\"><span class=\"chest-emoji\">\uD83E\uDDF0</span><strong>Coffre ".concat(i + 1, "</strong></div><div class=\"gems\" aria-hidden=\"true\">").concat('💎'.repeat(n), "</div><div style=\"display:flex;align-items:center;gap:11px\"><button class=\"remove-gem\" data-action=\"take-gem\" data-index=\"").concat(i, "\" aria-label=\"Retirer une pierre du coffre ").concat(i + 1, "\" ").concat(n === 0 ? 'disabled' : '', ">\u2212</button><strong>").concat(n, "</strong><button class=\"remove-gem\" data-action=\"give-gem\" data-index=\"").concat(i, "\" aria-label=\"Ajouter une pierre au coffre ").concat(i + 1, "\" ").concat(left === 0 ? 'disabled' : '', ">+</button></div></div>"); }).join(''), "</div><div class=\"share-bottom\">Total distribu\u00E9 : ").concat(ex.total - left, " / ").concat(ex.total, "</div></div>"); }
+    function columnHTML(ex) { var _a = ex.operands, a = _a[0], b = _a[1]; return "<div class=\"column-wrap\" aria-label=\"Calcul pos\u00E9\"><div>".concat(E.format(a), "</div><div class=\"column-last\">").concat(ex.op, "&nbsp;").concat(E.format(b), "</div><div style=\"color:#a4b4a8\">?</div></div>"); }
+    function scratchHTML(game) { return "<div class=\"scratch-wrap\"><button class=\"scratch-toggle\" data-action=\"scratch\">\u270F\uFE0F ".concat(game.scratchOpen ? 'Cacher' : 'Ouvrir', " mon ardoise</button>").concat(game.scratchOpen ? "<div class=\"scratch-area\"><canvas id=\"scratch-canvas\" aria-label=\"Ardoise pour \u00E9crire au doigt\" width=\"620\" height=\"210\"></canvas></div><div class=\"scratch-clear\"><button class=\"btn btn-small btn-outline\" data-action=\"clear-scratch\">Effacer l'ardoise</button></div>" : '', "</div>"); }
+    function inputSection(game) {
+        var ex = game.exercise;
+        var content = '';
+        if (ex.kind === 'operator') {
+            content = "<span class=\"answer-label\">Choisis l'op\u00E9ration qui convient</span><div class=\"operator-options\" role=\"group\" aria-label=\"Choisir le signe\">".concat(['+', '−', '×', '÷'].map(function (op) { return "<button class=\"operator-btn ".concat(game.answer === op ? 'selected' : '', "\" data-action=\"operator\" data-operator=\"").concat(op, "\" aria-pressed=\"").concat(game.answer === op, "\">").concat(op, "</button>"); }).join(''), "</div>");
+        }
+        else if (ex.kind === 'share')
+            content = shareHTML(game);
+        else
+            content = fieldHTML(game);
+        return "<div class=\"answer-area\">".concat(content).concat(ex.column ? scratchHTML(game) : '', "</div>");
+    }
+    function questionCard(game) {
+        var ex = game.exercise, mode = E.MODES[ex.mode];
+        var resolved = game.resolved;
+        var wrong = game.feedback === 'bad';
+        var formulaVisible = !ex.story && ex.mode !== 'column' && ex.mode !== 'share' && ex.mode !== 'fraction';
+        return "<article class=\"question-card\"><div class=\"question-content\"><div class=\"question-mode\"><span class=\"mode-face\">".concat(mode.emoji, "</span> ").concat(mode.title, " \u00B7 ").concat(levelNames[ex.tier], "</div><h2>").concat(esc(ex.prompt), "</h2>").concat(formulaVisible ? "<div class=\"formula\">".concat(esc(ex.formula), "</div>") : '').concat(ex.story ? '<div class="story-formula">💭 Trouve toi-même la bonne opération.</div>' : '').concat(ex.column ? columnHTML(ex) : '').concat(ex.kind === 'fraction' ? "<div class=\"fraction-bars\" role=\"img\" aria-label=\"".concat(ex.numerator, " parties sur ").concat(ex.denominator, "\">").concat(Array.from({ length: ex.denominator }, function (_, i) { return "<span class=\"fraction-part ".concat(i < ex.numerator ? 'selected' : '', "\"></span>"); }).join(''), "</div>") : '', "\n ").concat(!resolved ? inputSection(game) : '', "\n ").concat(game.showHint && !resolved ? "<div class=\"hint-box\">\uD83D\uDCA1 <strong>Petit indice :</strong> ".concat(esc(ex.hint), "</div>") : '', "\n ").concat(game.feedback ? "<div class=\"feedback ".concat(game.feedback === 'good' ? 'good' : 'bad', "\" role=\"status\"><strong>").concat(game.feedback === 'good' ? '🌟 Excellent !' : resolved ? '🌱 On apprend aussi en se trompant !' : '🔎 Essaie encore !', "</strong><p>").concat(resolved ? esc(ex.explanation) : 'Ce n’est pas encore la bonne réponse. Tu peux réessayer ou demander un indice.', "</p></div>") : '', "\n <div class=\"answer-actions\">").concat(!resolved ? "<button class=\"btn btn-outline\" data-action=\"hint\">\uD83D\uDCA1 ".concat(game.showHint ? 'Indice affiché' : 'Un indice', "</button><button class=\"btn btn-dark\" data-action=\"").concat(wrong ? 'retry' : 'submit', "\" id=\"submit-answer\" ").concat(canSubmit(game) || wrong ? '' : 'disabled', ">").concat(wrong ? 'Réessayer ↻' : 'Vérifier ✓', "</button>") : "<button class=\"btn btn-primary\" data-action=\"next\">".concat(game.index + 1 >= game.length ? 'Voir mes résultats 🏆' : 'Continuer ➜', "</button>"), "</div></div></article>");
+    }
+    function canSubmit(game) { var ex = game.exercise; if (ex.kind === 'share')
+        return game.allocations.reduce(function (a, b) { return a + b; }, 0) === ex.total; if (ex.kind === 'operator')
+        return !!game.answer; if (ex.kind === 'remainder')
+        return /^\d+$/.test(game.answer) && /^\d+$/.test(game.remainder); return /^\d+$/.test(game.answer.replace(/\s/g, '')); }
+    function quizPage() { var g = ui.game; if (!g)
+        return mapPage(); if (g.finished)
+        return finishPage(g); return "<div class=\"game-shell\"><div class=\"game-top\"><button class=\"round-icon\" data-action=\"quit\" aria-label=\"Quitter le d\u00E9fi\">\u2715</button><div class=\"game-heading\"><strong>".concat(g.type === 'daily' ? 'Mission du jour' : g.type === 'adventure' ? E.WORLDS[g.world].name : E.MODES[g.mode].title, "</strong><span class=\"tiny\">").concat(g.type === 'daily' ? 'Plusieurs îles' : levelNames[g.exercise.tier], " \u00B7 ").concat(g.correct, " bonne").concat(g.correct > 1 ? 's' : '', " r\u00E9ponse").concat(g.correct > 1 ? 's' : '', "</span></div><div class=\"game-step\">").concat(g.index + 1, " / ").concat(g.length, "</div></div><div class=\"game-progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(g.length, "\" aria-valuenow=\"").concat(g.index, "\"><span style=\"width:").concat(g.index / g.length * 100, "%\"></span></div>").concat(questionCard(g), "<div class=\"game-bottom-tools\"><span class=\"game-footnote\">\uD83E\uDD8A Pico t'accompagne. Prends ton temps.</span>").concat(!g.resolved ? "<button class=\"btn btn-ghost btn-small\" data-action=\"skip\">Passer \u2192</button>" : '', "</div></div>"); }
+    function finishPage(g) { var gained = progress.xp - g.xpStart; return "<div class=\"game-shell\"><div class=\"session-finish\"><span class=\"victory-icon\">".concat(g.correct === g.length ? '🏆' : g.correct >= Math.ceil(g.length * .6) ? '🌟' : '🦊', "</span><p class=\"eyebrow-dark\" style=\"margin-top:15px\">Mission termin\u00E9e</p><h1>").concat(g.correct === g.length ? 'Quelle performance !' : g.correct >= g.length * .6 ? 'Bravo, exploratrice !' : 'Belle exploration !', "</h1><div class=\"finish-score\">").concat(g.correct, " <span style=\"font-size:1.6rem;color:#8ca2a0\">/ ").concat(g.length, "</span></div><p class=\"muted\">").concat(g.correct === g.length ? 'Tu as trouvé toutes les bonnes réponses !' : 'Tu avances à ton rythme. Les erreurs permettent aussi d’apprendre.', "</p><div class=\"panel\" style=\"background:#fff9e8;box-shadow:none\"><strong>\u2B50 ").concat(gained, " \u00E9toiles gagn\u00E9es</strong><p class=\"tiny\" style=\"margin:7px 0 0\">Tu as d\u00E9sormais ").concat(E.format(progress.xp), " \u00E9toiles au total.</p></div>").concat(g.levelups.length ? "<div class=\"level-up\">\uD83D\uDE80 Nouveau niveau d\u00E9bloqu\u00E9 : ".concat(g.levelups.map(function (_a) {
+        var world = _a.world, tier = _a.tier;
+        return "".concat(E.WORLDS[world].short, " \u2014 ").concat(levelNames[tier]);
+    }).join(' · '), " !</div>") : '', "<div class=\"finish-actions\"><button class=\"btn btn-primary\" data-action=\"replay\">\uD83D\uDD01 Rejouer</button><button class=\"btn btn-outline\" data-action=\"quit-finish\">\uD83D\uDDFA\uFE0F Retour \u00E0 la carte</button></div></div></div>"); }
+    function render() { var playing = !!ui.game; app.innerHTML = "<div class=\"app-shell\">".concat(header(), "<main id=\"main-content\">").concat(playing ? quizPage() : ui.page === 'map' ? mapPage() : ui.page === 'practice' ? practicePage() : ui.page === 'collection' ? collectionPage() : parentsPage(), "</main>").concat(playing ? '' : navigation(), "</div>"); if (playing && ui.game.scratchOpen && !ui.game.finished)
+        attachCanvas(); }
+    function sessionLevel(world, forced) { return forced === 'auto' ? progress.worlds[world].tier : Math.max(0, Math.min(3, Number(forced))); }
+    function start(type, world, mode) {
+        var chosen = world || ui.world;
+        var w = chosen;
+        if (type === 'practice' && (mode === 'share' || mode === 'fraction' || mode === 'remainder'))
+            w = 'div';
+        var length = type === 'daily' ? Math.min(8, progress.settings.dailyGoal) : 6;
+        ui.game = { type: type, world: w, mode: mode || 'flash', tierOverride: type === 'practice' ? ui.chosenTier : 'auto', length: length, index: 0, correct: 0, xpStart: progress.xp, exercise: null, answer: '', remainder: '', focusedField: 'answer', attempts: 0, showHint: false, hintUsed: false, feedback: null, resolved: false, allocations: [], finished: false, scratchOpen: false, drawing: null, levelups: [] };
+        nextExercise();
+    }
+    function makeExerciseForStep(g) {
+        var world = g.world, mode = g.mode, tier;
+        if (g.type === 'daily') {
+            var dailyModes = ['flash', 'missing', 'story', 'detective', 'forge', 'column', 'sequence', 'share'];
+            mode = dailyModes[g.index % dailyModes.length];
+            world = E.WORLD_IDS[g.index % E.WORLD_IDS.length];
+            if (mode === 'share')
+                world = 'div';
+        }
+        else if (g.type === 'adventure') {
+            var modes = world === 'div' ? ['flash', 'missing', 'share', 'story', 'column', 'remainder'] : ['flash', 'missing', 'story', 'column', 'detective', 'sequence'];
+            mode = modes[g.index % modes.length];
+            if (mode === 'remainder' && sessionLevel(world, 'auto') < 3)
+                mode = 'forge';
+        }
+        tier = sessionLevel(world, g.tierOverride);
+        if (mode === 'fraction' || mode === 'remainder')
+            tier = Math.max(tier, 3);
+        var ex = E.generateExercise(world, tier, mode);
+        // Avoid presenting an identical exercise twice in a row.
+        for (var n = 0; n < 7 && g.previous && ex.formula === g.previous; n++)
+            ex = E.generateExercise(world, tier, mode);
+        g.previous = ex.formula;
+        return ex;
+    }
+    function nextExercise() {
+        var g = ui.game;
+        if (!g)
+            return;
+        if (g.index >= g.length) {
+            g.finished = true;
+            render();
+            window.scrollTo(0, 0);
+            return;
+        }
+        g.exercise = makeExerciseForStep(g);
+        g.answer = '';
+        g.remainder = '';
+        g.focusedField = 'answer';
+        g.attempts = 0;
+        g.showHint = false;
+        g.hintUsed = false;
+        g.feedback = null;
+        g.resolved = false;
+        g.allocations = g.exercise.kind === 'share' ? Array(g.exercise.groups).fill(0) : [];
+        g.scratchOpen = false;
+        g.drawing = null;
+        render();
+        window.scrollTo(0, 0);
+    }
+    function finishAnswer(correct) {
+        var g = ui.game, ex = g.exercise;
+        g.resolved = true;
+        g.feedback = correct ? 'good' : 'bad';
+        if (correct)
+            g.correct++;
+        var before = progress.worlds[ex.world].tier;
+        E.registerResult(progress, ex.world, ex.tier, ex.mode, correct, g.hintUsed || g.attempts > 0);
+        if (progress.worlds[ex.world].tier > before)
+            g.levelups.push({ world: ex.world, tier: progress.worlds[ex.world].tier });
+        save();
+        beep(correct);
+        render();
+    }
+    function submit() {
+        var g = ui.game;
+        if (!g || g.resolved || !canSubmit(g))
+            return;
+        var ans = g.exercise.kind === 'share' ? g.allocations : g.exercise.kind === 'remainder' ? { quotient: g.answer, remainder: g.remainder } : g.answer;
+        if (E.verify(g.exercise, ans))
+            finishAnswer(true);
+        else {
+            g.attempts++;
+            beep(false);
+            if (g.attempts >= 2) {
+                finishAnswer(false);
+            }
+            else {
+                g.feedback = 'bad';
+                render();
+            }
+        }
+    }
+    function go(page) { ui.game = null; ui.page = page; render(); window.scrollTo(0, 0); }
+    function registerCanvasDraw(canvas) {
+        var ctx = canvas.getContext('2d');
+        if (!ctx)
+            return;
+        var active = false;
+        function pt(ev) { var rect = canvas.getBoundingClientRect(); return { x: (ev.clientX - rect.left) * canvas.width / rect.width, y: (ev.clientY - rect.top) * canvas.height / rect.height }; }
+        function start(ev) { if (ev.preventDefault)
+            ev.preventDefault(); active = true; var p = pt(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x + .01, p.y + .01); ctx.stroke(); }
+        function move(ev) { if (!active)
+            return; if (ev.preventDefault)
+            ev.preventDefault(); var p = pt(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); }
+        function stop() { if (!active)
+            return; active = false; try {
+            if (ui.game)
+                ui.game.drawing = canvas.toDataURL('image/png');
+        }
+        catch (e) { } }
+        ctx.strokeStyle = '#234b63';
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        if (ui.game.drawing) {
+            var pic = new Image();
+            pic.onload = function () { if (ui.game && ui.game.drawing)
+                ctx.drawImage(pic, 0, 0, canvas.width, canvas.height); };
+            pic.src = ui.game.drawing;
+        }
+        canvas.addEventListener('mousedown', start, false);
+        canvas.addEventListener('mousemove', move, false);
+        canvas.addEventListener('mouseup', stop, false);
+        canvas.addEventListener('mouseleave', stop, false);
+        canvas.addEventListener('touchstart', function (e) { if (e.touches.length) {
+            start(e.touches[0]);
+            e.preventDefault();
+        } }, false);
+        canvas.addEventListener('touchmove', function (e) { if (e.touches.length) {
+            move(e.touches[0]);
+            e.preventDefault();
+        } }, false);
+        canvas.addEventListener('touchend', function (e) { e.preventDefault(); stop(); }, false);
+        canvas.addEventListener('touchcancel', stop, false);
+    }
+    function attachCanvas() { var canvas = document.getElementById('scratch-canvas'); if (canvas)
+        registerCanvasDraw(canvas); }
+    function insertKey(key) { var g = ui.game; if (!g || g.resolved || g.exercise.kind === 'operator' || g.exercise.kind === 'share')
+        return; var which = g.exercise.kind === 'remainder' ? g.focusedField : 'answer'; var old = g[which]; if (key === 'C')
+        g[which] = '';
+    else if (key === '⌫')
+        g[which] = old.slice(0, -1);
+    else if (/^\d$/.test(key) && old.length < 10)
+        g[which] = (old + key).replace(/^0+(?=\d)/, ''); var el = document.getElementById(which === 'answer' ? 'number-answer' : 'remainder-answer'); if (el)
+        el.value = g[which]; var btn = document.getElementById('submit-answer'); if (btn)
+        btn.disabled = !canSubmit(g); }
+    function exportProgress() {
+        try {
+            var data = JSON.stringify(progress, null, 2), a = document.createElement('a');
+            if (typeof Blob !== 'undefined' && window.URL && URL.createObjectURL) {
+                var blob = new Blob([data], { type: 'application/json' }), url = URL.createObjectURL(blob);
+                a.href = url;
+                a.download = 'maths-quest-sauvegarde.json';
+            }
+            else {
+                a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(data);
+                a.download = 'maths-quest-sauvegarde.json';
+            }
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            if (a.parentNode)
+                a.parentNode.removeChild(a);
+            notify('Export demandé. Sur une vieille tablette, cette fonction peut être indisponible.');
+        }
+        catch (e) {
+            notify('Export non disponible dans ce lecteur.');
+        }
+    }
+    app.addEventListener('click', function (event) {
+        var el = event.target.closest('[data-action]');
+        if (!el)
+            return;
+        var action = el.dataset.action;
+        if (action === 'go') {
+            go(el.dataset.page);
+            return;
+        }
+        if (action === 'set-page-cm1') {
+            ui.page = 'practice';
+            ui.chosenTier = '3';
+            ui.game = null;
+            render();
+            window.scrollTo(0, 0);
+            return;
+        }
+        if (action === 'world') {
+            ui.world = el.dataset.world;
+            render();
+            return;
+        }
+        if (action === 'level') {
+            ui.chosenTier = el.dataset.tier;
+            progress.settings.level = ui.chosenTier;
+            save();
+            render();
+            return;
+        }
+        if (action === 'start') {
+            start(el.dataset.type, el.dataset.world, el.dataset.mode);
+            return;
+        }
+        if (action === 'quit') {
+            if (window.confirm('Quitter la mission ? Les exercices déjà terminés restent sauvegardés.'))
+                go('map');
+            return;
+        }
+        if (action === 'quit-finish') {
+            go('map');
+            return;
+        }
+        if (action === 'replay') {
+            var g = ui.game;
+            start(g.type, g.world, g.mode);
+            return;
+        }
+        if (action === 'keypad') {
+            insertKey(el.dataset.key);
+            return;
+        }
+        if (action === 'operator') {
+            if (ui.game && !ui.game.resolved) {
+                ui.game.answer = el.dataset.operator;
+                render();
+            }
+            return;
+        }
+        if (action === 'give-gem' || action === 'take-gem') {
+            var g = ui.game;
+            if (!g || g.resolved)
+                return;
+            var i = Number(el.dataset.index);
+            var allocated = g.allocations.reduce(function (a, b) { return a + b; }, 0);
+            if (action === 'give-gem' && allocated < g.exercise.total)
+                g.allocations[i]++;
+            if (action === 'take-gem' && g.allocations[i] > 0)
+                g.allocations[i]--;
+            render();
+            return;
+        }
+        if (action === 'submit') {
+            submit();
+            return;
+        }
+        if (action === 'retry') {
+            if (ui.game) {
+                ui.game.feedback = null;
+                render();
+            }
+            return;
+        }
+        if (action === 'hint') {
+            if (ui.game) {
+                ui.game.showHint = true;
+                ui.game.hintUsed = true;
+                render();
+            }
+            return;
+        }
+        if (action === 'skip') {
+            if (ui.game && !ui.game.resolved)
+                finishAnswer(false);
+            return;
+        }
+        if (action === 'next') {
+            if (ui.game && ui.game.resolved) {
+                ui.game.index++;
+                nextExercise();
+            }
+            return;
+        }
+        if (action === 'scratch') {
+            if (ui.game) {
+                ui.game.scratchOpen = !ui.game.scratchOpen;
+                render();
+            }
+            return;
+        }
+        if (action === 'clear-scratch') {
+            if (ui.game) {
+                ui.game.drawing = null;
+                var c = document.getElementById('scratch-canvas');
+                if (c)
+                    c.getContext('2d').clearRect(0, 0, c.width, c.height);
+            }
+            return;
+        }
+        if (action === 'sound') {
+            progress.settings.sound = !progress.settings.sound;
+            save();
+            render();
+            notify(progress.settings.sound ? 'Sons activés' : 'Sons désactivés');
+            return;
+        }
+        if (action === 'export') {
+            exportProgress();
+            return;
+        }
+        if (action === 'import') {
+            document.getElementById('import-file').click();
+            return;
+        }
+        if (action === 'reset') {
+            if (window.confirm('Effacer TOUTES les étoiles et les réussites sur cet appareil ? Cette action est irréversible sans sauvegarde.')) {
+                progress = E.makeEmpty();
+                ui.chosenTier = 'auto';
+                save();
+                render();
+                notify('Progression réinitialisée.');
+            }
+            return;
+        }
+    });
+    app.addEventListener('input', function (event) { if (['number-answer', 'remainder-answer'].includes(event.target.id) && ui.game) {
+        var key = event.target.id === 'remainder-answer' ? 'remainder' : 'answer';
+        ui.game[key] = event.target.value.replace(/[^\d]/g, '').slice(0, 10);
+        event.target.value = ui.game[key];
+        var btn = document.getElementById('submit-answer');
+        if (btn)
+            btn.disabled = !canSubmit(ui.game);
+    } });
+    app.addEventListener('change', function (event) {
+        if (event.target.id === 'daily-goal') {
+            progress.settings.dailyGoal = Number(event.target.value);
+            save();
+            notify('Objectif quotidien mis à jour.');
+        }
+        if (event.target.id === 'import-file' && event.target.files && event.target.files[0]) {
+            var file = event.target.files[0];
+            if (file.size > 1024 * 1024) {
+                notify('Fichier trop volumineux.');
+                return;
+            }
+            var reader_1 = new FileReader();
+            reader_1.onload = function () { try {
+                var raw = JSON.parse(String(reader_1.result));
+                if (!raw || raw.version !== 1 || !raw.worlds)
+                    throw Error('invalid');
+                if (!window.confirm('Remplacer la progression actuelle par cette sauvegarde ?'))
+                    return;
+                progress = E.sanitizeProgress(raw);
+                ui.chosenTier = progress.settings.level;
+                save();
+                render();
+                notify('Sauvegarde importée !');
+            }
+            catch (_) {
+                notify('Ce fichier ne semble pas être une sauvegarde Maths Quest valide.');
+            } };
+            reader_1.readAsText(file);
+        }
+    });
+    app.addEventListener('focusin', function (event) { if (ui.game && ['number-answer', 'remainder-answer'].includes(event.target.id)) {
+        ui.game.focusedField = event.target.id === 'number-answer' ? 'answer' : 'remainder';
+        app.querySelectorAll('.number-field').forEach(function (el) { return el.classList.toggle('active-field', el === event.target); });
+    } });
+    document.addEventListener('keydown', function (event) { if (!ui.game || ui.game.finished)
+        return; if (event.key === 'Enter' && document.activeElement && ['number-answer', 'remainder-answer'].includes(document.activeElement.id) && !event.repeat) {
+        event.preventDefault();
+        submit();
+    } });
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+        window.addEventListener('load', function () { return navigator.serviceWorker.register('./service-worker.js').catch(function () { }); });
+    }
+    render();
+})();
+</script></body></html>
