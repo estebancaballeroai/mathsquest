@@ -102,6 +102,13 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         div: { name: 'L’Archipel du Partage', short: 'Division', emoji: '🏝️', color: '#4b9cc8', desc: 'Répartis les trésors avec justice.' }
     };
     var MODES = { flash: { title: 'Calcul éclair', emoji: '⚡', desc: 'Écris le résultat, sans indices imposés.' }, missing: { title: 'Nombre mystère', emoji: '🔍', desc: 'Trouve la valeur cachée.' }, story: { title: 'Histoires à résoudre', emoji: '📜', desc: 'Choisis le bon calcul dans une histoire.' }, detective: { title: 'Détective des erreurs', emoji: '🕵️', desc: 'Répare un calcul incorrect.' }, sequence: { title: 'Suites secrètes', emoji: '🔮', desc: 'Complète une suite logique.' }, column: { title: 'Calcul posé', emoji: '✏️', desc: 'Utilise une ardoise pour poser ton calcul.' }, forge: { title: 'La Forge des signes', emoji: '🛠️', desc: 'Retrouve le signe qui crée le bon résultat.' }, share: { title: 'Partage du trésor', emoji: '💎', desc: 'Distribue les pierres une par une.' }, fraction: { title: 'Fractions magiques', emoji: '🧩', desc: 'Prends une partie d’une quantité (CM1).' }, remainder: { title: 'Division avec reste', emoji: '🧮', desc: 'Trouve le quotient et le reste (CM1).' } };
+    MODES.numeration={title:'Nombres géants',emoji:'🔢',desc:'Décompose et reconstruis les nombres.'};
+    MODES.clock={title:'Tour du temps',emoji:'🕰️',desc:'Horaires et durées de voyage.'};
+    MODES.money={title:'Marché enchanté',emoji:'🛍️',desc:'Achète et rends la monnaie.'};
+    MODES.measures={title:'Jardin des mesures',emoji:'📏',desc:'Longueurs et conversions.'};
+    MODES.geometry={title:'Plans du château',emoji:'📐',desc:'Périmètres et aires.'};
+    MODES.data={title:'Observatoire',emoji:'📊',desc:'Lis les diagrammes en bâtons.'};
+    MODES.proportion={title:'Recettes magiques',emoji:'🧁',desc:'Multiplie les quantités (CM1).'};
     var clamp = function (n, min, max) { return Math.max(min, Math.min(max, n)); };
     var randint = function (min, max, rng) {
         if (rng === void 0) { rng = Math.random; }
@@ -174,6 +181,39 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         if (!MODES[mode])
             throw Error('Invalid mode');
         var t = clamp(tier, 0, 3);
+
+        if(mode==='numeration'){
+          var n=randint([100,1000,10000,100000][t],[999,9999,99999,999999][t],rng);
+          var str=String(n),units=['unités','dizaines','centaines','milliers','dizaines de milliers','centaines de milliers'],pieces=[];
+          for(var j=0;j<str.length;j++){var d=Number(str[j]);if(d)pieces.push(d+' '+units[str.length-j-1]);}
+          return baseExercise('add',t,mode,'Numération','Quel nombre contient '+pieces.join(', ')+' ?',n,'Les unités sont tout à droite. Puis viennent les dizaines, les centaines et les milliers.','Il fallait écrire '+format(n)+'.',{kind:'number'});
+        }
+        if(mode==='clock'){
+          var h=randint(8,15,rng),m=randint(0,11,rng)*5,dur=randint(3,8+t*5,rng)*5;
+          var minutes=h*60+m,fin=minutes+dur;
+          var display=function(v){return Math.floor(v/60)+' h '+('0'+(v%60)).slice(-2);};
+          return baseExercise('sub',t,mode,'Temps','Le train part à '+display(minutes)+' et arrive à '+display(fin)+'. Combien de minutes a duré le trajet ?',dur,'Compte les minutes écoulées entre les deux horaires.','Il s’écoule '+dur+' minutes.',{kind:'clock'});
+        }
+        if(mode==='money'){
+          var count=randint(2,4+t,rng),price=randint(2,7+t*3,rng),payment=count*price+randint(1,5+t*3,rng);
+          return baseExercise('add',t,mode,'Marché','Tu achètes '+count+' livres à '+price+' € chacun. Tu paies '+payment+' €. Combien d’euros doit-on te rendre ?',payment-count*price,'Prix total = quantité × prix unitaire, puis calcule la différence.',''+count+' × '+price+' = '+count*price+' €. Monnaie : '+payment+' − '+count*price+' = '+(payment-count*price)+' €.',{kind:'money'});
+        }
+        if(mode==='measures'){
+          var a=randint(1,10+t*6,rng),b=randint(5,95,rng),big=t===3,answer=a*(big?1000:100)+b;
+          return baseExercise('mul',t,mode,'Mesures','Un sentier mesure '+a+(big?' km et ':' m et ')+b+(big?' m':' cm')+'. Combien cela fait-il de '+(big?'mètres':'centimètres')+' ?',answer,'1 '+(big?'km = 1 000 m.':'m = 100 cm.'),'La réponse est '+answer+(big?' m.':' cm.'),{kind:'measure'});
+        }
+        if(mode==='geometry'){
+          var a=randint(3,14+t*4,rng),b=t===0?a:randint(2,9+t*5,rng),area=t===3,r=area?a*b:2*(a+b);
+          return baseExercise('mul',t,mode,'Géométrie','Un rectangle mesure '+a+' cm de long et '+b+' cm de large. Quel est son '+(area?'aire en cm²':'périmètre en cm')+' ?',r,area?'Aire = longueur × largeur.':'Périmètre = somme des quatre côtés.',area?'Aire : '+a+' × '+b+' = '+r+' cm².':'Périmètre : 2 × ('+a+' + '+b+') = '+r+' cm.',{kind:'geometry',width:a,height:b});
+        }
+        if(mode==='data'){
+          var bars=[randint(2,7+t*3,rng),randint(8,13+t*3,rng),randint(3,9+t*3,rng)],hi=Math.max.apply(null,bars),lo=Math.min.apply(null,bars);
+          return baseExercise('sub',t,mode,'Diagramme','Combien y a-t-il d’animaux de plus dans la colonne la plus haute que dans la plus basse ?',hi-lo,'Compare la plus grande barre à la plus petite.',''+hi+' − '+lo+' = '+(hi-lo)+' animaux.',{kind:'chart',bars:bars});
+        }
+        if(mode==='proportion'){
+          var n=randint(2,6,rng),quantity=randint(2,10,rng)*n,factor=randint(2,5,rng);
+          return baseExercise('mul',3,mode,'Recettes','Une recette pour '+n+' personnes utilise '+quantity+' g de chocolat. Combien en faut-il pour '+n*factor+' personnes ?',quantity*factor,'Il y a '+factor+' fois plus de personnes : multiplie aussi le chocolat par '+factor+'.',''+quantity+' × '+factor+' = '+(quantity*factor)+' g.',{kind:'proportion'});
+        }
         if (mode === 'forge') {
             var _loop_1 = function (iter) {
                 var op = choose(['+', '−', '×', '÷'], rng);
@@ -340,7 +380,7 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         }
         return normalizeNumber(received) === exercise.answer;
     }
-    function makeEmpty() { return { version: 1, xp: 0, history: [], settings: { dailyGoal: 10, sound: true, level: 'auto' }, worlds: Object.fromEntries(WORLD_IDS.map(function (id) { return [id, { tier: 0, attempts: 0, correct: 0, byTier: [[], [], [], []] }]; })), lastPlayed: null, unlocked: [] }; }
+    function makeEmpty() { return { version: 1, xp: 0, history: [], settings: { dailyGoal: 10, sessionGoal: 20, sound: true, level: 'auto' }, worlds: Object.fromEntries(WORLD_IDS.map(function (id) { return [id, { tier: 0, attempts: 0, correct: 0, byTier: [[], [], [], []] }]; })), lastPlayed: null, unlocked: [] }; }
     function sanitizeProgress(raw) {
         var base = makeEmpty();
         if (!raw || typeof raw !== 'object')
@@ -349,6 +389,7 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         if (raw.settings && typeof raw.settings === 'object') {
             base.settings.dailyGoal = [6, 10, 15, 20].includes(raw.settings.dailyGoal) ? raw.settings.dailyGoal : 10;
             base.settings.sound = raw.settings.sound !== false;
+            base.settings.sessionGoal = [12,20,30,40].indexOf(Number(raw.settings.sessionGoal))>=0 ? Number(raw.settings.sessionGoal) : 20;
             base.settings.level = ['auto', '0', '1', '2', '3'].includes(raw.settings.level) ? raw.settings.level : 'auto';
         }
         var _loop_2 = function (id) {
@@ -543,7 +584,7 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         return /^\d+$/.test(game.answer) && /^\d+$/.test(game.remainder); return /^\d+$/.test(game.answer.replace(/\s/g, '')); }
     function quizPage() { var g = ui.game; if (!g)
         return mapPage(); if (g.finished)
-        return finishPage(g); return "<div class=\"game-shell\"><div class=\"game-top\"><button class=\"round-icon\" data-action=\"quit\" aria-label=\"Quitter le d\u00E9fi\">\u2715</button><div class=\"game-heading\"><strong>".concat(g.type === 'daily' ? 'Mission du jour' : g.type === 'adventure' ? E.WORLDS[g.world].name : E.MODES[g.mode].title, "</strong><span class=\"tiny\">").concat(g.type === 'daily' ? 'Plusieurs îles' : levelNames[g.exercise.tier], " \u00B7 ").concat(g.correct, " bonne").concat(g.correct > 1 ? 's' : '', " r\u00E9ponse").concat(g.correct > 1 ? 's' : '', "</span></div><div class=\"game-step\">").concat(g.index + 1, " / ").concat(g.length, "</div></div><div class=\"game-progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(g.length, "\" aria-valuenow=\"").concat(g.index, "\"><span style=\"width:").concat(g.index / g.length * 100, "%\"></span></div>").concat(questionCard(g), "<div class=\"game-bottom-tools\"><span class=\"game-footnote\">\uD83E\uDD8A Pico t'accompagne. Prends ton temps.</span>").concat(!g.resolved ? "<button class=\"btn btn-ghost btn-small\" data-action=\"skip\">Passer \u2192</button>" : '', "</div></div>"); }
+        return finishPage(g); return "<div class=\"game-shell\"><div class=\"game-top\"><button class=\"round-icon\" data-action=\"quit\" aria-label=\"Quitter le d\u00E9fi\">\u2715</button><div class=\"game-heading\"><strong>".concat(g.type === 'daily' ? 'Grande expédition' : g.type === 'adventure' ? E.WORLDS[g.world].name : E.MODES[g.mode].title, "</strong><span class=\"tiny\">").concat(g.type === 'daily' ? 'Plusieurs îles' : levelNames[g.exercise.tier], " \u00B7 ").concat(g.correct, " bonne").concat(g.correct > 1 ? 's' : '', " r\u00E9ponse").concat(g.correct > 1 ? 's' : '', "</span></div><div class=\"game-step\">").concat(g.index + 1, " / ").concat(g.length, "</div></div><div class=\"game-progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(g.length, "\" aria-valuenow=\"").concat(g.index, "\"><span style=\"width:").concat(g.index / g.length * 100, "%\"></span></div>").concat(questionCard(g), "<div class=\"game-bottom-tools\"><span class=\"game-footnote\">\uD83E\uDD8A Pico t'accompagne. Prends ton temps.</span>").concat(!g.resolved ? "<button class=\"btn btn-ghost btn-small\" data-action=\"skip\">Passer \u2192</button>" : '', "</div></div>"); }
     function finishPage(g) { var gained = progress.xp - g.xpStart; return "<div class=\"game-shell\"><div class=\"session-finish\"><span class=\"victory-icon\">".concat(g.correct === g.length ? '🏆' : g.correct >= Math.ceil(g.length * .6) ? '🌟' : '🦊', "</span><p class=\"eyebrow-dark\" style=\"margin-top:15px\">Mission termin\u00E9e</p><h1>").concat(g.correct === g.length ? 'Quelle performance !' : g.correct >= g.length * .6 ? 'Bravo, exploratrice !' : 'Belle exploration !', "</h1><div class=\"finish-score\">").concat(g.correct, " <span style=\"font-size:1.6rem;color:#8ca2a0\">/ ").concat(g.length, "</span></div><p class=\"muted\">").concat(g.correct === g.length ? 'Tu as trouvé toutes les bonnes réponses !' : 'Tu avances à ton rythme. Les erreurs permettent aussi d’apprendre.', "</p><div class=\"panel\" style=\"background:#fff9e8;box-shadow:none\"><strong>\u2B50 ").concat(gained, " \u00E9toiles gagn\u00E9es</strong><p class=\"tiny\" style=\"margin:7px 0 0\">Tu as d\u00E9sormais ").concat(E.format(progress.xp), " \u00E9toiles au total.</p></div>").concat(g.levelups.length ? "<div class=\"level-up\">\uD83D\uDE80 Nouveau niveau d\u00E9bloqu\u00E9 : ".concat(g.levelups.map(function (_a) {
         var world = _a.world, tier = _a.tier;
         return "".concat(E.WORLDS[world].short, " \u2014 ").concat(levelNames[tier]);
@@ -556,16 +597,19 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         var w = chosen;
         if (type === 'practice' && (mode === 'share' || mode === 'fraction' || mode === 'remainder'))
             w = 'div';
-        var length = type === 'daily' ? Math.min(8, progress.settings.dailyGoal) : 6;
+        var length = type === 'daily' ? progress.settings.sessionGoal : type === 'adventure' ? 12 : 10;
         ui.game = { type: type, world: w, mode: mode || 'flash', tierOverride: type === 'practice' ? ui.chosenTier : 'auto', length: length, index: 0, correct: 0, xpStart: progress.xp, exercise: null, answer: '', remainder: '', focusedField: 'answer', attempts: 0, showHint: false, hintUsed: false, feedback: null, resolved: false, allocations: [], finished: false, scratchOpen: false, drawing: null, levelups: [] };
         nextExercise();
     }
     function makeExerciseForStep(g) {
         var world = g.world, mode = g.mode, tier;
         if (g.type === 'daily') {
-            var dailyModes = ['flash', 'missing', 'story', 'detective', 'forge', 'column', 'sequence', 'share'];
+            var dailyModes = ['flash', 'missing', 'story', 'numeration', 'clock', 'money', 'measures', 'geometry', 'data', 'detective', 'forge', 'column', 'sequence', 'share', 'fraction', 'proportion'];
             mode = dailyModes[g.index % dailyModes.length];
             world = E.WORLD_IDS[g.index % E.WORLD_IDS.length];
+            if(['numeration','money'].indexOf(mode)>=0)world='add';
+            if(['clock','data'].indexOf(mode)>=0)world='sub';
+            if(['geometry','measures','proportion'].indexOf(mode)>=0)world='mul';
             if (mode === 'share')
                 world = 'div';
         }
@@ -576,7 +620,7 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
                 mode = 'forge';
         }
         tier = sessionLevel(world, g.tierOverride);
-        if (mode === 'fraction' || mode === 'remainder')
+        if (mode === 'fraction' || mode === 'remainder' || mode === 'proportion')
             tier = Math.max(tier, 3);
         var ex = E.generateExercise(world, tier, mode);
         // Avoid presenting an identical exercise twice in a row.
