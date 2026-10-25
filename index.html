@@ -61,7 +61,18 @@ body{background:#f5f3e9;color:#173249}
 button,input{touch-action:manipulation}
 @media(min-width:800px){.world-card{width:23%}.mode-card{width:31%}}
 @media(max-width:390px){.world-card{min-height:206px}.mode-card{min-height:147px}.hero h1{font-size:2rem}.brand-sub{font-size:9px}}
-.pico-guide{background:#e7f5e9;border:2px solid #c5e1cd;padding:16px;border-radius:18px;margin:14px 0;line-height:1.5;font-size:.9rem}.learning-art{background:#fff4dc;border-radius:16px;margin:12px 0;padding:16px;text-align:center;font-size:36px}.bar-chart{display:flex;align-items:flex-end;justify-content:space-around;min-height:150px}.bar-col{display:flex;flex-direction:column;gap:5px;align-items:center;font-size:15px}.bar-vertical{width:40px;border-radius:8px 8px 0 0}.prize-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.prize{background:white;border:1px solid #dedbd2;padding:14px;border-radius:17px;text-align:center;display:flex;flex-direction:column;gap:6px}.prize-owned{background:#fff8df;border-color:#e0c16b}@media(min-width:600px){.prize-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}</style></head><body><div id="app"><div style="max-width:540px;margin:20px auto;padding:22px;background:#fff;border-radius:18px;font-family:Arial,sans-serif"><h1 style="font-size:25px">Maths Quest</h1><p>Chargement du jeu...</p><p style="font-size:14px">Si ce message reste affich&eacute;, ouvre ce fichier avec un <strong>navigateur Internet</strong> (et non avec le lecteur HTML int&eacute;gr&eacute;). Certaines anciennes tablettes d&eacute;sactivent JavaScript dans leur lecteur de fichiers.</p></div></div><div id="announcer" class="sr-only" aria-live="polite"></div><script>window.onerror=function(msg,src,line){var a=document.getElementById('app');if(a){a.innerHTML='<div style="margin:20px;padding:20px;background:#fff;border:2px solid #d97449;border-radius:15px;font-family:Arial,sans-serif"><h2>Impossible de lancer le jeu</h2><p>Cette tablette a un navigateur trop ancien ou un lecteur HTML qui ne permet pas le jeu. Essaie avec son navigateur Internet.</p><small>'+String(msg).replace(/[<>]/g,'')+' (ligne '+line+')</small></div>';}return false;};</script><script>(function(){
+.pico-guide{background:#e7f5e9;border:2px solid #c5e1cd;padding:16px;border-radius:18px;margin:14px 0;line-height:1.5;font-size:.9rem}.learning-art{background:#fff4dc;border-radius:16px;margin:12px 0;padding:16px;text-align:center;font-size:36px}.bar-chart{display:flex;align-items:flex-end;justify-content:space-around;min-height:150px}.bar-col{display:flex;flex-direction:column;gap:5px;align-items:center;font-size:15px}.bar-vertical{width:40px;border-radius:8px 8px 0 0}.prize-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.prize{background:white;border:1px solid #dedbd2;padding:14px;border-radius:17px;text-align:center;display:flex;flex-direction:column;gap:6px}.prize-owned{background:#fff8df;border-color:#e0c16b}@media(min-width:600px){.prize-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+/* Eight illustrated worlds - intentionally lightweight for old Samsung Android. */
+.zones-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.zone-card{border:1px solid #dfe5dc;background:#fff;border-radius:24px;padding:0;overflow:hidden;color:#173249;text-align:left;box-shadow:0 8px 24px rgba(20,45,60,.09);min-height:225px;display:block;width:100%}
+.zone-scene{position:relative;height:112px;overflow:hidden}
+.zone-emoji{position:absolute;left:50%;top:20px;transform:translateX(-50%);font-size:53px;line-height:1.3;filter:drop-shadow(0 5px 5px rgba(20,37,55,.17))}
+.zone-copy{padding:13px 17px 16px}.zone-order{display:block;color:#6b718f;font-size:10px;font-weight:900;letter-spacing:.04em}
+.zone-name{font-size:17px;font-weight:900;margin:7px 0 5px;line-height:1.19}.zone-desc{color:#677d8b;font-size:12px;margin:0 0 10px;line-height:1.4}
+.zone-footer{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#62718b;font-weight:800;font-size:11px}.zone-go{color:#245c86}
+@media(max-width:540px){.zones-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.zone-name{font-size:14px}.zone-copy{padding:10px}.zone-card{min-height:222px}.zone-emoji{font-size:44px}.zone-desc{font-size:11px}}
+@media(max-width:330px){.zones-grid{grid-template-columns:1fr}}
+</style></head><body><div id="app"><div style="max-width:540px;margin:20px auto;padding:22px;background:#fff;border-radius:18px;font-family:Arial,sans-serif"><h1 style="font-size:25px">Maths Quest</h1><p>Chargement du jeu...</p><p style="font-size:14px">Si ce message reste affich&eacute;, ouvre ce fichier avec un <strong>navigateur Internet</strong> (et non avec le lecteur HTML int&eacute;gr&eacute;). Certaines anciennes tablettes d&eacute;sactivent JavaScript dans leur lecteur de fichiers.</p></div></div><div id="announcer" class="sr-only" aria-live="polite"></div><script>window.onerror=function(msg,src,line){var a=document.getElementById('app');if(a){a.innerHTML='<div style="margin:20px;padding:20px;background:#fff;border:2px solid #d97449;border-radius:15px;font-family:Arial,sans-serif"><h2>Impossible de lancer le jeu</h2><p>Cette tablette a un navigateur trop ancien ou un lecteur HTML qui ne permet pas le jeu. Essaie avec son navigateur Internet.</p><small>'+String(msg).replace(/[<>]/g,'')+' (ligne '+line+')</small></div>';}return false;};</script><script>(function(){
 if(!Array.prototype.includes)Array.prototype.includes=function(x){return this.indexOf(x)!==-1;};
 if(!Array.prototype.fill)Array.prototype.fill=function(value,start,end){var l=this.length>>>0;var s=start==null?0:(start<0?Math.max(0,l+start):Math.min(l,start));var e=end==null?l:(end<0?Math.max(0,l+end):Math.min(l,end));for(var i=s;i<e;i++)this[i]=value;return this;};
 if(!Array.from)Array.from=function(obj,map){var len=obj.length>>>0,out=[];for(var i=0;i<len;i++)out.push(map?map(obj[i],i):obj[i]);return out;};
@@ -519,10 +530,49 @@ try { var x=document.createElement('button');if(typeof x.dataset==='undefined')O
         var page = _a[0], icon = _a[1], label = _a[2];
         return "<button class=\"nav-item ".concat(ui.page === page ? 'active' : '', "\" data-action=\"go\" data-page=\"").concat(page, "\" aria-current=\"").concat(ui.page === page ? 'page' : 'false', "\"><span class=\"nav-icon\">").concat(icon, "</span><span>").concat(label, "</span></button>");
     }).join(''), "</nav>"); }
-    function mapPage() {
-        var completed = progress.history.length, goal = progress.settings.sessionGoal, all = Object.values(progress.worlds).reduce(function (a, b) { return a + b.correct; }, 0);
-        var story = all === 0 ? 'Le grand phare des nombres s’est éteint. Aide Pico à retrouver les quatre éclats cachés dans les îles !' : all < 15 ? 'Pico a retrouvé une première piste ! Continue les missions pour réveiller la lumière du phare.' : all < 50 ? 'La carte s’illumine : de nouveaux mystères apparaissent dans l’archipel.' : 'Le phare brille de plus en plus fort grâce à tes découvertes. Les défis CM1 t’attendent !';
-        return "<section class=\"hero\"><div class=\"hero-copy\"><div class=\"eyebrow\">\u2726 Chapitre 1 \u00B7 La lumi\u00E8re perdue</div><h1>Les maths sont une <span style=\"color:#f6ca78\">aventure !</span></h1><p>".concat(story, "</p><button class=\"btn btn-primary\" data-action=\"start\" data-type=\"daily\">\uD83C\uDF92 ").concat('Commencer une grande expédition', " <span aria-hidden=\"true\">\u279C</span></button></div><div class=\"hero-art\"><div class=\"hero-star\">\u2728</div>").concat(heroSvg(), "<div class=\"hero-spark\">\u2B50</div></div></section>\n <div class=\"daily-card\"><div class=\"daily-icon\">\uD83C\uDFAF</div><div class=\"daily-copy\"><div class=\"daily-title\">Grande expédition · ").concat(goal, " exercices · ").concat(completed, "</div><div class=\"daily-sub\">").concat('Joue le mercredi, le week-end et les vacances, sans obligation quotidienne.', "</div><div class=\"progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(goal, "\" aria-valuenow=\"").concat(Math.min(completed, goal), "\"><span style=\"width:").concat(Math.min(completed / goal * 100, 100), "%\"></span></div></div><button class=\"btn btn-dark btn-small\" data-action=\"start\" data-type=\"daily\">Jouer \u2192</button></div>\n <section class=\"section\">").concat(sectionHeader('Explore les quatre îles', 'Chaque île devient plus difficile à mesure que tu progresses.'), "<div class=\"world-grid\">").concat(E.WORLD_IDS.map(function (id) { var w = E.WORLDS[id], s = worldStats(id); return "<button class=\"world-card\" data-action=\"start\" data-type=\"adventure\" data-world=\"".concat(id, "\" aria-label=\"Jouer dans ").concat(esc(w.name), "\"><div class=\"world-scene world-tint-").concat(id, "\"><span class=\"world-emoji\">").concat(w.emoji, "</span><span class=\"world-level\">").concat(shortLevels[s.tier], "</span></div><div class=\"world-body\"><div class=\"world-title\">").concat(w.name, "</div><p class=\"world-subtitle\">").concat(w.desc, "</p><div class=\"world-meta\"><span class=\"stars\">").concat('★'.repeat(Math.min(3, Math.floor(s.p.correct / 10)))).concat('☆'.repeat(3 - Math.min(3, Math.floor(s.p.correct / 10))), "</span><span class=\"world-arrow\">\u279C</span></div></div></button>"); }).join(''), "</div></section>\n <section class=\"section\">").concat(sectionHeader('Envie d’un autre défi ?', 'Choisis ton jeu préféré ou tente directement le niveau CM1.'), "<div class=\"resource-strip\"><button class=\"btn btn-outline\" data-action=\"go\" data-page=\"practice\">\uD83C\uDFB2 Tous les mini-jeux \u2192</button><button class=\"btn btn-outline\" data-action=\"set-page-cm1\">\uD83D\uDE80 Essayer le CM1 \u2192</button></div></section>");
+    var ZONES=[
+      {id:'calc',name:'La Forêt des calculs',emoji:'🌳',desc:'Les quatre opérations et le calcul mental.',world:'add',modes:['flash','missing','story','column','detective','forge','share','sequence'],sky:'#daf3cb',land:'#70b69a'},
+      {id:'numbers',name:'La Bibliothèque des nombres',emoji:'📚',desc:'Numération, décomposition et suites.',world:'add',modes:['numeration','sequence','missing'],sky:'#fff0c7',land:'#e8ad70'},
+      {id:'time',name:'La Vallée du temps',emoji:'🕰️',desc:'Horloges, horaires et durées.',world:'sub',modes:['clock'],sky:'#d7ddfc',land:'#9d95db'},
+      {id:'market',name:'Le Marché des trésors',emoji:'🛍️',desc:'Achats, prix et monnaie.',world:'add',modes:['money'],sky:'#ffe6ce',land:'#ec9b7e'},
+      {id:'shapes',name:'Le Château des formes',emoji:'🏰',desc:'Périmètres, aires et dimensions.',world:'mul',modes:['geometry'],sky:'#eadcfd',land:'#ac88db'},
+      {id:'measures',name:'Le Jardin des mesures',emoji:'🌻',desc:'Longueurs et conversions.',world:'mul',modes:['measures'],sky:'#e1f5d8',land:'#84c59a'},
+      {id:'observatory',name:'L’Observatoire des mystères',emoji:'🔭',desc:'Diagrammes, fractions et suites.',world:'sub',modes:['data','fraction','sequence'],sky:'#d0ebf8',land:'#6aa9cc'},
+      {id:'mountain',name:'La Montagne des défis',emoji:'🚀',desc:'Recettes, divisions et défis CM1.',world:'mul',modes:['proportion','remainder','fraction','geometry','numeration'],sky:'#e6dbff',land:'#8884ca'}
+    ];
+    function zoneIllustration(z) {
+      return '<div class="zone-scene" style="background:'+z.sky+'"><svg viewBox="0 0 320 112" width="100%" height="112" aria-hidden="true">'
+        +'<circle cx="258" cy="30" r="19" fill="#fff7cc"/><ellipse cx="67" cy="35" rx="35" ry="12" fill="#ffffff" opacity=".65"/>'
+        +'<path d="M0 93 Q45 55 92 90 Q141 25 198 85 Q256 39 320 85 L320 112 L0 112Z" fill="'+z.land+'"/>'
+        +'<path d="M0 104 Q80 81 158 109 Q252 70 320 97 L320 112 L0 112Z" fill="#ffffff" opacity=".26"/>'
+        +'</svg><span class="zone-emoji" aria-hidden="true">'+z.emoji+'</span></div>';
+    }
+    function mapPage(){
+      var total=progress.history.length,goal=progress.settings.sessionGoal;
+      var story=total===0?'Pico a besoin de toi pour retrouver les huit cristaux des mathématiques !'
+        :total<40?'Huit mondes à explorer, et de nouvelles découvertes à chaque mission !'
+        :'Ton archipel grandit. Continue à explorer et découvre les défis CM1 !';
+      var hero='<section class="hero"><div class="hero-copy"><div class="eyebrow">✦ Chapitre 1 · Les huit mondes</div>'
+        +'<h1>Les maths sont une <span style="color:#f6ca78">aventure !</span></h1><p>'+story+'</p>'
+        +'<button class="btn btn-primary" data-action="start" data-type="daily">🎒 Grande expédition · '+goal+' exercices ➜</button></div>'
+        +'<div class="hero-art"><div class="hero-star">✨</div>'+heroSvg()+'</div></section>';
+      var intro='<div class="daily-card"><div class="daily-icon">🦊</div><div class="daily-copy">'
+        +'<div class="daily-title">'+total+' exercices réalisés depuis le début</div>'
+        +'<div class="daily-sub">Mercredi, week-end et vacances : aucune obligation quotidienne, tes étoiles sont conservées.</div>'
+        +'<div class="progress"><span style="width:'+Math.min(100,total)+'%"></span></div></div>'
+        +'<button class="btn btn-dark btn-small" data-action="go" data-page="collection">Trésors →</button></div>';
+      var cards=ZONES.map(function(z,i){
+        var wins=progress.history.filter(function(e){return e.correct&&z.modes.indexOf(e.mode)!==-1;}).length;
+        return '<button class="zone-card" data-action="zone" data-zone="'+z.id+'" aria-label="Explorer '+z.name+'">'
+          +zoneIllustration(z)+'<div class="zone-copy"><span class="zone-order">MONDE '+(i+1)+(z.id==='mountain'?' · DÉFI CM1':' · CE2 → CM1')+'</span>'
+          +'<div class="zone-name">'+z.name+'</div><p class="zone-desc">'+z.desc+'</p>'
+          +'<div class="zone-footer"><span>⭐ '+wins+' réussites</span><span class="zone-go">Explorer ➜</span></div></div></button>';
+      }).join('');
+      return hero+intro+'<section class="section">'+sectionHeader('Explore les huit mondes','Choisis un monde : chaque carte ouvre ses propres exercices.')
+        +'<div class="zones-grid">'+cards+'</div></section>'
+        +'<section class="section">'+sectionHeader('Tous les autres jeux','Choisis le niveau et les exercices dans l’atelier.')
+        +'<div class="resource-strip"><button class="btn btn-outline" data-action="go" data-page="practice">🎲 Atelier des mini-jeux →</button>'
+        +'<button class="btn btn-outline" data-action="set-page-cm1">🚀 Essayer le CM1 →</button></div></section>';
     }
     function practicePage() {
         var levelChoices = [['auto', 'Auto'], ['0', 'CE2 ★'], ['1', 'CE2 ★★'], ['2', 'CE2 ★★★'], ['3', 'CM1']];
@@ -594,7 +644,7 @@ return '';}
         return /^\d+$/.test(game.answer) && /^\d+$/.test(game.remainder); return /^\d+$/.test(game.answer.replace(/\s/g, '')); }
     function quizPage() { var g = ui.game; if (!g)
         return mapPage(); if (g.finished)
-        return finishPage(g); return "<div class=\"game-shell\"><div class=\"game-top\"><button class=\"round-icon\" data-action=\"quit\" aria-label=\"Quitter le d\u00E9fi\">\u2715</button><div class=\"game-heading\"><strong>".concat(g.type === 'daily' ? 'Grande expédition' : g.type === 'adventure' ? E.WORLDS[g.world].name : E.MODES[g.mode].title, "</strong><span class=\"tiny\">").concat(g.type === 'daily' ? 'Plusieurs îles' : levelNames[g.exercise.tier], " \u00B7 ").concat(g.correct, " bonne").concat(g.correct > 1 ? 's' : '', " r\u00E9ponse").concat(g.correct > 1 ? 's' : '', "</span></div><div class=\"game-step\">").concat(g.index + 1, " / ").concat(g.length, "</div></div><div class=\"game-progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(g.length, "\" aria-valuenow=\"").concat(g.index, "\"><span style=\"width:").concat(g.index / g.length * 100, "%\"></span></div>").concat(questionCard(g), "<div class=\"game-bottom-tools\"><span class=\"game-footnote\">\uD83E\uDD8A Pico t'accompagne. Prends ton temps.</span>").concat(!g.resolved ? "<button class=\"btn btn-ghost btn-small\" data-action=\"skip\">Passer \u2192</button>" : '', "</div></div>"); }
+        return finishPage(g); return "<div class=\"game-shell\"><div class=\"game-top\"><button class=\"round-icon\" data-action=\"quit\" aria-label=\"Quitter le d\u00E9fi\">\u2715</button><div class=\"game-heading\"><strong>".concat(g.type === 'daily' ? 'Grande expédition' : g.type === 'zone' ? ZONES.filter(function(z){return z.id===g.zone;})[0].name : g.type === 'adventure' ? E.WORLDS[g.world].name : E.MODES[g.mode].title, "</strong><span class=\"tiny\">").concat(g.type === 'daily' ? 'Plusieurs îles' : levelNames[g.exercise.tier], " \u00B7 ").concat(g.correct, " bonne").concat(g.correct > 1 ? 's' : '', " r\u00E9ponse").concat(g.correct > 1 ? 's' : '', "</span></div><div class=\"game-step\">").concat(g.index + 1, " / ").concat(g.length, "</div></div><div class=\"game-progress\" role=\"progressbar\" aria-valuemin=\"0\" aria-valuemax=\"").concat(g.length, "\" aria-valuenow=\"").concat(g.index, "\"><span style=\"width:").concat(g.index / g.length * 100, "%\"></span></div>").concat(questionCard(g), "<div class=\"game-bottom-tools\"><span class=\"game-footnote\">\uD83E\uDD8A Pico t'accompagne. Prends ton temps.</span>").concat(!g.resolved ? "<button class=\"btn btn-ghost btn-small\" data-action=\"skip\">Passer \u2192</button>" : '', "</div></div>"); }
     function finishPage(g) { var gained = progress.xp - g.xpStart; return "<div class=\"game-shell\"><div class=\"session-finish\"><span class=\"victory-icon\">".concat(g.correct === g.length ? '🏆' : g.correct >= Math.ceil(g.length * .6) ? '🌟' : '🦊', "</span><p class=\"eyebrow-dark\" style=\"margin-top:15px\">Mission termin\u00E9e</p><h1>").concat(g.correct === g.length ? 'Quelle performance !' : g.correct >= g.length * .6 ? 'Bravo, exploratrice !' : 'Belle exploration !', "</h1><div class=\"finish-score\">").concat(g.correct, " <span style=\"font-size:1.6rem;color:#8ca2a0\">/ ").concat(g.length, "</span></div><p class=\"muted\">").concat(g.correct === g.length ? 'Tu as trouvé toutes les bonnes réponses !' : 'Tu avances à ton rythme. Les erreurs permettent aussi d’apprendre.', "</p><div class=\"panel\" style=\"background:#fff9e8;box-shadow:none\"><strong>\u2B50 ").concat(gained, " \u00E9toiles gagn\u00E9es</strong><p class=\"tiny\" style=\"margin:7px 0 0\">Tu as d\u00E9sormais ").concat(E.format(progress.xp), " \u00E9toiles au total.</p></div>").concat(g.levelups.length ? "<div class=\"level-up\">\uD83D\uDE80 Nouveau niveau d\u00E9bloqu\u00E9 : ".concat(g.levelups.map(function (_a) {
         var world = _a.world, tier = _a.tier;
         return "".concat(E.WORLDS[world].short, " \u2014 ").concat(levelNames[tier]);
@@ -602,13 +652,13 @@ return '';}
     function render() { var playing = !!ui.game; app.innerHTML = "<div class=\"app-shell\">".concat(header(), "<main id=\"main-content\">").concat(playing ? quizPage() : ui.page === 'map' ? mapPage() : ui.page === 'practice' ? practicePage() : ui.page === 'collection' ? collectionPage()+prizeGallery() : parentsPage(), "</main>").concat(playing ? '' : navigation(), "</div>"); if (playing && ui.game.scratchOpen && !ui.game.finished)
         attachCanvas(); }
     function sessionLevel(world, forced) { return forced === 'auto' ? progress.worlds[world].tier : Math.max(0, Math.min(3, Number(forced))); }
-    function start(type, world, mode) {
+    function start(type, world, mode, zoneId) {
         var chosen = world || ui.world;
         var w = chosen;
         if (type === 'practice' && (mode === 'share' || mode === 'fraction' || mode === 'remainder'))
             w = 'div';
-        var length = type === 'daily' ? progress.settings.sessionGoal : type === 'adventure' ? 12 : 10;
-        ui.game = { type: type, world: w, mode: mode || 'flash', tierOverride: type === 'practice' ? ui.chosenTier : 'auto', length: length, index: 0, correct: 0, xpStart: progress.xp, exercise: null, answer: '', remainder: '', focusedField: 'answer', attempts: 0, showHint: false, hintUsed: false, feedback: null, resolved: false, allocations: [], finished: false, scratchOpen: false, drawing: null, levelups: [] };
+        var length = type === 'daily' ? progress.settings.sessionGoal : type === 'zone' || type === 'adventure' ? 12 : 10;
+        ui.game = { type: type, world: w, zone: zoneId || '', mode: mode || 'flash', tierOverride: type === 'practice' ? ui.chosenTier : zoneId === 'mountain' ? '3' : 'auto', length: length, index: 0, correct: 0, xpStart: progress.xp, exercise: null, answer: '', remainder: '', focusedField: 'answer', attempts: 0, showHint: false, hintUsed: false, feedback: null, resolved: false, allocations: [], finished: false, scratchOpen: false, drawing: null, levelups: [] };
         nextExercise();
     }
     function makeExerciseForStep(g) {
@@ -620,8 +670,17 @@ return '';}
             if(['numeration','money'].indexOf(mode)>=0)world='add';
             if(['clock','data'].indexOf(mode)>=0)world='sub';
             if(['geometry','measures','proportion'].indexOf(mode)>=0)world='mul';
-            if (mode === 'share')
+            if (mode === 'share' || mode === 'fraction')
                 world = 'div';
+        }
+        else if (g.type === 'zone') {
+            var zone=ZONES.filter(function(z){return z.id===g.zone;})[0]||ZONES[0];
+            mode=zone.modes[g.index % zone.modes.length];
+            world=zone.id==='calc' ? E.WORLD_IDS[g.index % E.WORLD_IDS.length] : zone.world;
+            if(mode==='share'||mode==='fraction'||mode==='remainder')world='div';
+            if(mode==='numeration'||mode==='money')world='add';
+            if(mode==='clock'||mode==='data')world='sub';
+            if(mode==='geometry'||mode==='measures'||mode==='proportion')world='mul';
         }
         else if (g.type === 'adventure') {
             var modes = world === 'div' ? ['flash', 'missing', 'share', 'story', 'column', 'remainder'] : ['flash', 'missing', 'story', 'column', 'detective', 'sequence'];
@@ -781,6 +840,10 @@ return '';}
         var action = el.dataset.action;
         if (action === 'go') {
             go(el.dataset.page);
+            return;
+        }
+        if (action === 'zone') {
+            start('zone',null,null,el.dataset.zone);
             return;
         }
         if (action === 'set-page-cm1') {
